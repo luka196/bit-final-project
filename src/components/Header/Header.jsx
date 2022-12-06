@@ -10,6 +10,7 @@ const Header = () => {
                 <button>Create Report</button>
                 <button>Log In</button>
                 <button>Log Out</button>
+                <button>Log Out</button>
             </div>
         </div>
     )
