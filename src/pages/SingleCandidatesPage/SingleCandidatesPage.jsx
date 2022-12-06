@@ -16,6 +16,12 @@ const SingleCandidatesPage = () => {
                 <Info/>
                 <Info/>
             </div>
+            <h2>Reports</h2>
+            <div>
+                <div>🠟Company</div>
+                <div>🠟Interview Date</div>
+                <div>🠟Status</div>
+            </div>
             <Reports/>
             <Footer/>
         </div>

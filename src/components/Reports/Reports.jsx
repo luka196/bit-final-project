@@ -3,12 +3,10 @@ import "./reports.scss"
 const Reports = () => {
     return (
         <div className="reports">    
-            <h2>Reports</h2>
-            <div>
-                <div>Company</div>
-                <div>Interview Date</div>
-                <div>Status</div>
-            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <button><img src="" alt="oko"/></button>
         </div>
     )
 }

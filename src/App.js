@@ -7,15 +7,13 @@ import SingleCandidatesPage from './pages/SingleCandidatesPage/SingleCandidatesP
 
 function App() {
   return (
-    <div>
-      app
+    <div className="app">
       <CandidatesPage/>
       <SingleCandidatesPage/>
       <LoginPage/>
       <ReportsPage/>
       <CreateReportsPage/>
-      </div>
-    
+    </div>
   );
 }
 
