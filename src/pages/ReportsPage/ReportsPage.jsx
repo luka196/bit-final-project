@@ -10,7 +10,6 @@ const ReportsPage = () => {
     const {reports} = useContext(dataContext)
     return (
         <div className="reportsPage">
-            ReportsPage
             <Header/>
             <Search/>
             {reports?.map((e) => <ReportAdmin data = {e} />)}

@@ -1,84 +1,90 @@
-@import '../../constans/variables.scss';
+@import "../../constans/variables.scss";
 
-.candidatesPage{
+.candidatesPage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+
+  #candidate {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 80px 0;
+    width: 100%;
 
-
-    #candidate{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-
-        h2{
-            padding: 0 20px;
-        }
+    h2 {
+      padding: 0 20px;
     }
+  }
 
-    #btn-rep{
-        display: none;
-}
-    #btn-crrep{
-        display: none;
-}
-    #btn-logout{
-        display: none;
-}
-    .candidate{
+  #btn-rep {
+    display: none;
+  }
+  #btn-crrep {
+    display: none;
+  }
+  #btn-logout {
+    display: none;
+  }
+  a {
+    width: 23%;
+    min-width: 230px;
+
+    .candidate {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    //   width: 90%;
+      margin: 15px 5px;
+      border: 1px solid black;
+      border-radius: 10px;
+      -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
+      background-color: $color1;
+      color: $color2;
+      
+      img {
+        width: 40%;
+        margin: 10px 0;
+      }
+  
+      div {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 23%;
-        min-width: 300px;
-        margin: 15px 5px;
-        border: 1px solid black;
-        border-radius: 10px;
-        -webkit-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
-        box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
-        background-color: $color1;
-        color: $color2;
-
-
-        img {
-            width: 40%;
-            margin: 10px 0;
-        }
-
-        div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding-bottom: 10px;
-            word-break: break-all;
-        }
-
+        justify-content: center;
+        padding-bottom: 10px;
+        word-break: break-all;
+      }
     }
 
-    @media screen and (max-width: 768px){
-        .candidate {
-            width: 40%;
-        }
-    }
+  }
 
-    @media screen and (max-width: 425px) {
-        .candidate {
-            width: 100%;
+  @media screen and (max-width: 768px) {
+    a {
+      width: 49%;
+      min-width: 200px;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    #candidate {
+        flex-direction: column;
+    }
+    
+    a {
+      width: 100%;
+
+      .candidate {
             flex-direction: row;
 
             img {
                 width: 15%;
                 margin: 10px 20px;
             }
-
-            
-        }
-        
+      }
     }
-
+  }
 }

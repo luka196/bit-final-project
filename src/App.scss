@@ -4,12 +4,15 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 .app {
-    // background-image: url(https://img.lovepik.com/photo/40142/7803.jpg_wh860.jpg);
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // background-attachment: fixed;    
+    min-height: 100vh;
+    background-image: url(https://www.mksguide.com/wp-content/uploads/2022/06/Plain-Cover-Image-4-1024x683.webp);
+    background-repeat: no-repeat;
+    // background-size: 100%;
+    background-size: cover;
+    background-attachment: fixed;    
     color: $color2;
 }
