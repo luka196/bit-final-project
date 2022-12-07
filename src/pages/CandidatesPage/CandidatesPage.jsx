@@ -14,7 +14,7 @@ const CandidatesPage = () => {
         <div className="candidatesPage">
             CandidatesPage
             <Header />
-            <div>
+            <div id="candidate">
                 <h2>Candidates</h2>
                 <Search />
             </div>
@@ -26,16 +26,7 @@ const CandidatesPage = () => {
 
 
 
-            <div id="candidate">
-                <h2>Candidates</h2>
-                <Search />
-            </div>
-            <Candidate />
-            <Candidate />
-            <Candidate />
-            <Candidate />
-            <Candidate />
-            <Footer />
+           
         </div>
 
     );
