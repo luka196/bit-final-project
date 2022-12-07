@@ -1,0 +1,14 @@
+.reportsPage{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0;
+
+    #btn-login{
+        display: none;
+    }
+    #btn-rep{
+        background-color: #3f6179;
+    }
+}

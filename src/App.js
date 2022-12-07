@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './App.css';
+import './App.scss';
 import CandidatesPage from './pages/CandidatesPage/CandidatesPage';
 import CreateReportsPage from './pages/CreateReportsPage/CreateReportsPage';
 import LoginPage from './pages/LoginPage/LoginPage';
@@ -36,6 +36,7 @@ function App() {
   console.log(candidates,companies,reports,users)
 
   return (
+
     <DataProvider value={{candidates}}>
       <div className="app">
         <Switch>
