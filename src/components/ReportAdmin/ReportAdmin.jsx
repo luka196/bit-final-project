@@ -1,24 +1,24 @@
 import React from 'react'
 import "./reportAdmin.scss"
-const ReportAdmin = () => {
+const ReportAdmin = ({data}) => {
     return (
         <div className="reportAdmin">
-           ReportAdmin
+    
            <div>
-               <p>Google</p>
+               <p>{data?.companyName}</p>
                <span>Company</span>
            </div>
            <div>
-               <p>Google</p>
-               <span>Company</span>
+               <p>{data?.candidateName}</p>
+               <span>Candidate</span>
             </div> 
            <div>
-               <p>Google</p>
-               <span>Company</span>
+               <p>{data?.interviewDate.slice(4,16)}</p>
+               <span>Interview Date</span>
             </div> 
            <div>
-               <p>Google</p>
-               <span>Company</span>
+               <p>{data.status}</p>
+               <span>Status</span>
             </div> 
            <div>
                 <button><img src="" alt="dugmeSlika"/></button>
