@@ -1,12 +1,15 @@
 import React from 'react'
 import "./candidate.scss"
-const Candidate = () => {
+const Candidate = ({data}) => {
     return (
         <div className="candidate">
             Candidate
-            <img alt="img"/>
-            <h2>ime</h2>
-            <p>mail</p>
+            <img src={data.avatar} alt="Image unavailable"/>
+            <div>
+            <h2>{data.name}</h2>
+            <p>{data.email}</p>
+            </div>
+
         </div>
     )
 }

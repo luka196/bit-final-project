@@ -1,12 +1,11 @@
 import React from 'react'
 import "./info.scss"
-const Info = () => {
+const Info = ({data,title}) => {
     return (
         <div className="info">
-           Info 
            <div>
-                <h2>h2</h2>
-               <p>info</p>
+                <h2>{title}</h2>
+               <p>{data}</p>
            </div>
         </div>
     )
