@@ -1,123 +1,122 @@
-@import '../../constans/variables.scss';
+@import "../../constans/variables.scss";
 
-.reportsPage{
+.reportsPage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+
+  #btn-login {
+    display: none;
+  }
+  #btn-rep {
+    background-color: #3f6179;
+  }
+
+  .search {
+    width: 100%;
+
+    input {
+      border-radius: 10px;
+    }
+  }
+
+  .reportAdmin {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 0;
+    width: 95%;
+    margin-bottom: 15px;
+    -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
 
-    #btn-login{
-        display: none;
+    div {
+      width: 13%;
+      background-color: $color1;
+      color: $color2;
+      border-left: 1px solid $color2;
+      padding: 5px;
+
+      p {
+        font-size: 22px;
+      }
+      span {
+        font-size: 14px;
+      }
     }
-    #btn-rep{
-        background-color: #3f6179;
+
+    > :first-child {
+      border: none;
+      width: 40%;
     }
+    > :nth-child(2) {
+      width: 40%;
+    }
+    > :last-child {
+      display: flex;
+      justify-content: space-around;
+      width: 10%;
 
-    .search {
-        width: 100%;
+      button {
+        width: 30px;
+        background-color: $color1;
+        border: none;
 
-        input {
-            border-radius: 10px;
+        img {
+          width: 30px;
+          background-color: $color1;
+          color: $color1;
         }
-    }
 
+        .closeBtn {
+          width: 17px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
     .reportAdmin {
-        display: flex;
-        width: 95%;
-        margin-bottom: 15px;
-        -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
-        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
-
-        div {
-            width: 13%;
-            background-color: $color1;
-            color: $color2;
-            border-left: 1px solid $color2;
-            padding: 5px;
-
-            p {
-              font-size: 22px;  
-            }
-            span{
-                font-size: 14px;
-            }
-        }
-
-        >:first-child {
-            border: none;
-            width: 40%;
-        }
-        >:nth-child(2) {
-            width: 40%;
-        }
-        >:last-child {
-            display: flex;
-            justify-content: space-around;
-            width: 10%;
-
-            button{
-                width: 30px;
-                background-color: $color1;
-                border: none;
-                
-                img {
-                    width: 30px;
-                    background-color: $color1;
-                    color: $color1;
-                }
-                
-                .closeBtn {
-                    width: 17px;
-                }
-            }   
-        }
+      flex-wrap: wrap;
+      > :first-child {
+        width: 50%;
+        border-bottom: 1px solid $color2;
+      }
+      > :nth-child(2) {
+        width: 50%;
+        border-bottom: 1px solid $color2;
+      }
+      > :nth-child(3) {
+        width: 40%;
+      }
+      > :nth-child(4) {
+        width: 40%;
+      }
+      > :nth-child(5) {
+        width: 20%;
+      }
     }
-
-    @media screen and (max-width: 768px){
-        .reportAdmin {
-            flex-wrap: wrap;
-            >:first-child {
-                width: 50%;
-                border-bottom: 1px solid $color2;
-            }
-            >:nth-child(2) {
-                width: 50%;
-                border-bottom: 1px solid $color2;
-            }
-            >:nth-child(3) {
-                width: 40%;
-            }
-            >:nth-child(4) {
-                width: 40%;
-            }
-            >:nth-child(5) {
-                width: 20%;
-            }
-        }
-        wq
+  }
+  @media screen and (max-width: 425px) {
+    .reportAdmin {
+      flex-wrap: wrap;
+      > :first-child {
+        width: 50%;
+        border-bottom: 1px solid $color2;
+      }
+      > :nth-child(2) {
+        width: 50%;
+        border-bottom: 1px solid $color2;
+      }
+      > :nth-child(3) {
+        width: 40%;
+      }
+      > :nth-child(4) {
+        width: 40%;
+      }
+      > :nth-child(5) {
+        width: 20%;
+      }
     }
-    @media screen and (max-width: 425px){
-        .reportAdmin {
-            flex-wrap: wrap;
-            >:first-child {
-                width: 50%;
-                border-bottom: 1px solid $color2;
-            }
-            >:nth-child(2) {
-                width: 50%;
-                border-bottom: 1px solid $color2;
-            }
-            >:nth-child(3) {
-                width: 40%;
-            }
-            >:nth-child(4) {
-                width: 40%;
-            }
-            >:nth-child(5) {
-                width: 20%;
-            }
-        }
-    }
+  }
 }
