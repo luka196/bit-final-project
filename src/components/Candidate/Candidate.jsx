@@ -1,13 +1,16 @@
 import React from 'react'
 import "./candidate.scss"
-const Candidate = () => {
+const Candidate = ({data}) => {
     return (
         <div className="candidate">
-            <img src='https://cdn.britannica.com/31/182831-050-3F0A0CCE/Arnold-Schwarzenegger-title-character-Conan-the-Destroyer.jpg' alt="img"/>
+
+            Candidate
+            <img src={data.avatar} alt="Image unavailable"/>
             <div>
-                <h2>Milos kracunjel</h2>
-                <p>miloskracunjel14@gmail.com</p>
+            <h2>{data.name}</h2>
+            <p>{data.email}</p>
             </div>
+
         </div>
         
     )

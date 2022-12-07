@@ -2,6 +2,7 @@ import React from 'react'
 import "./reports.scss"
 const Reports = () => {
     return (
+
         <div className="reports">  
             <div>
                 <div>Company</div>
@@ -9,6 +10,7 @@ const Reports = () => {
                 <div>Status <span>dsa</span></div>
                 
             </div>
+
         </div>
     )
 }
