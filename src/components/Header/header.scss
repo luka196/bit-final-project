@@ -16,7 +16,10 @@
         border-radius: 10px;
         background-color: $btn-color;
         border: 1px solid $color2;
-        color: $color2;    
+        
+        a {
+            color: $color2;
+        }
     }
  
     h1{

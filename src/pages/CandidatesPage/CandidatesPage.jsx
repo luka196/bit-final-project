@@ -12,7 +12,7 @@ const CandidatesPage = () => {
     return (
 
         <div className="candidatesPage">
-            CandidatesPage
+
             <Header />
             <div id="candidate">
                 <h2>Candidates</h2>
