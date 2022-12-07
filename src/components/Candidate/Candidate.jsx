@@ -3,6 +3,7 @@ import "./candidate.scss"
 const Candidate = ({data}) => {
     return (
         <div className="candidate">
+
             Candidate
             <img src={data.avatar} alt="Image unavailable"/>
             <div>
@@ -11,6 +12,7 @@ const Candidate = ({data}) => {
             </div>
 
         </div>
+        
     )
 }
 

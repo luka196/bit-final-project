@@ -1,3 +1,4 @@
+
 import React, {useContext} from 'react'
 import Candidate from '../../components/Candidate/Candidate'
 import Footer from '../../components/Footer/Footer'
@@ -24,4 +25,20 @@ const CandidatesPage = () => {
     )
 }
 
-export default CandidatesPage
+
+        <div id="candidate">
+          <h2>Candidates</h2>
+          <Search />
+        </div>  
+            <Candidate />
+            <Candidate />
+            <Candidate />
+            <Candidate />
+            <Candidate />
+        <Footer />
+      </div>
+    </>
+  );
+};
+
+export default CandidatesPage;

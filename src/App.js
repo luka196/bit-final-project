@@ -36,6 +36,7 @@ function App() {
   console.log(candidates,companies,reports,users)
 
   return (
+
     <DataProvider value={{candidates}}>
       <div className="app">
         <Switch>

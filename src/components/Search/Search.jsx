@@ -3,9 +3,8 @@ import "./search.scss"
 const Search = () => {
     return (
         <div className="search">
-            Search
             <div>
-                <img alt="img"/>
+                <img className='slika' src='https://cdn-icons-png.flaticon.com/512/54/54481.png' alt="img" />
                 <input type="search" placeholder="Search"/>
             </div>
         </div>
