@@ -1,20 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
 import Info from '../../components/Info/Info'
 import Reports from '../../components/Reports/Reports'
 import "./singleCandidatesPage.scss"
+import { dataContext } from '../../context'
+import { useRouteMatch } from 'react-router-dom'
 const SingleCandidatesPage = () => {
+    const { candidates } = useContext(dataContext)
+    const match = useRouteMatch()
+    const singleCandidate = candidates?.find((e) => e.id == match.params.id)
+    console.log(singleCandidate);
     return (
         <div className="singleCandidatesPage">
-            SingleCandidatesPage
-            <Header/>
-            <img alt="img"/>
+            <Header />
+            <img src={singleCandidate?.avatar} alt="Image unavailable" />
             <div>
-                <Info/>
-                <Info/>
-                <Info/>
-                <Info/>
+                <Info data = {singleCandidate?.name} title = 'Name:'/>
+                <Info data = {singleCandidate?.birthday} title = 'Date of birth:'/>
+                <Info data = {singleCandidate?.email} title = 'Email:'/>
+                <Info data = {singleCandidate?.education} title = 'Education:'/>
             </div>
             <h2>Reports</h2>
             <div>
@@ -22,8 +27,8 @@ const SingleCandidatesPage = () => {
                 <div>🠟Interview Date</div>
                 <div>🠟Status</div>
             </div>
-            <Reports/>
-            <Footer/>
+            <Reports />
+            <Footer />
         </div>
     )
 }
