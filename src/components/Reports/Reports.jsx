@@ -2,12 +2,12 @@ import React from 'react'
 import "./reports.scss"
 const Reports = () => {
     return (
-        <div className="reports">    
-            <h2>Reports</h2>
+        <div className="reports">  
             <div>
                 <div>Company</div>
                 <div>Interview Date</div>
-                <div>Status</div>
+                <div>Status <span>dsa</span></div>
+                
             </div>
         </div>
     )

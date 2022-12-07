@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import CandidatesPage from './pages/CandidatesPage/CandidatesPage';
 import CreateReportsPage from './pages/CreateReportsPage/CreateReportsPage';
 import LoginPage from './pages/LoginPage/LoginPage';
@@ -7,13 +7,12 @@ import SingleCandidatesPage from './pages/SingleCandidatesPage/SingleCandidatesP
 
 function App() {
   return (
-    <div>
-      app
-      <CandidatesPage/>
-      <SingleCandidatesPage/>
-      <LoginPage/>
+    <div className='app'>
+      {/* <CandidatesPage/> */}
+      {/* <SingleCandidatesPage/> */}
+      {/* <LoginPage/> */}
       <ReportsPage/>
-      <CreateReportsPage/>
+      {/* <CreateReportsPage/> */}
       </div>
     
   );

@@ -3,11 +3,13 @@ import "./candidate.scss"
 const Candidate = () => {
     return (
         <div className="candidate">
-            Candidate
-            <img alt="img"/>
-            <h2>ime</h2>
-            <p>mail</p>
+            <img src='https://cdn.britannica.com/31/182831-050-3F0A0CCE/Arnold-Schwarzenegger-title-character-Conan-the-Destroyer.jpg' alt="img"/>
+            <div>
+                <h2>Milos kracunjel</h2>
+                <p>miloskracunjel14@gmail.com</p>
+            </div>
         </div>
+        
     )
 }
 
