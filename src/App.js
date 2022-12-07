@@ -37,7 +37,7 @@ function App() {
 
   return (
 
-    <DataProvider value={{candidates}}>
+    <DataProvider value={{candidates,reports,companies,users}}>
       <div className="app">
         <Switch>
           <Route exact path="/">

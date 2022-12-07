@@ -1,6 +1,6 @@
 import React from 'react'
 import "./fillReport.scss"
-const FillReport = () => {
+const FillReport = ({setPage}) => {
     return (
         <div className="fillReport">
             FillReport
@@ -32,7 +32,7 @@ const FillReport = () => {
                 <input type="textarea"/>
             </div>
             <div>
-                <button>BACK</button>
+                <button onClick={() => setPage(2)}>BACK</button>
                 <button>SUBMIT</button>
             </div>
         </div>

@@ -1,15 +1,18 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Search from '../Search/Search'
 import "./selectCompany.scss"
-const SelectCompany = () => {
+import { dataContext } from '../../context'
+
+const SelectCompany = ({setPage}) => {
+    const {companies} = useContext(dataContext)
     return (
         <div className="selectCompany">
             SelectCompany
             <Search/>
-            <div>Company 1</div>
+            {companies.map((e) => <div>{e.name}</div>)}
             <div>
-                <button>BACK</button>
-                <button>NEXT</button>
+                <button onClick={() => setPage(1)}>BACK</button>
+                <button onClick={() => setPage(3)}>NEXT</button>
             </div>
         </div>
     )

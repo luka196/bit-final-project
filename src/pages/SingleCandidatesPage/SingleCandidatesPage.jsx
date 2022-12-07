@@ -18,7 +18,7 @@ const SingleCandidatesPage = () => {
             <img src={singleCandidate?.avatar} alt="Image unavailable" />
             <div className="info-div">
                 <Info data = {singleCandidate?.name} title = 'Name:'/>
-                <Info data = {singleCandidate?.birthday} title = 'Date of birth:'/>
+                <Info data = {singleCandidate?.birthday.slice(4,16)} title = 'Date of birth:'/>
                 <Info data = {singleCandidate?.email} title = 'Email:'/>
                 <Info data = {singleCandidate?.education} title = 'Education:'/>
             </div>
