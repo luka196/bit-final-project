@@ -4,7 +4,7 @@ import "./fillReport.scss"
 const FillReport = ({setPage}) => {
     return (
         <div className="fillReport">
-            FillReport
+            <div>
             <div>
              <p>Interview Date:</p>   
             <input type= "date" />
