@@ -7,12 +7,11 @@ const SelectCompany = ({setPage}) => {
     const {companies} = useContext(dataContext)
     return (
         <div className="selectCompany">
-            SelectCompany
             <Search/>
-            {companies.map((e) => <div>{e.name}</div>)}
+            {companies.map((e) => <div className='company'>{e.name}</div>)}
             <div>
-                <button onClick={() => setPage(1)}>BACK</button>
-                <button onClick={() => setPage(3)}>NEXT</button>
+                <button className="btnWizard" onClick={() => setPage(1)}>BACK</button>
+                <button className="btnWizard" onClick={() => setPage(3)}>NEXT</button>
             </div>
         </div>
     )

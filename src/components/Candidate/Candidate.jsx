@@ -4,7 +4,7 @@ const Candidate = ({data}) => {
     return (
         <div className="candidate">
 
-            <img src={data?.avatar} alt="Image unavailable"/>
+            <img src={data?.avatar} alt="Image"/>
             <div>
             <h2>{data?.name}</h2>
             <p>{data?.email}</p>

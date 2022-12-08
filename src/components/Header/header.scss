@@ -27,3 +27,14 @@
     }
 
 }
+@media screen and (max-width: 425px) {
+    .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h1{
+            width: 100%;
+            text-align: center;
+        }
+    }
+}

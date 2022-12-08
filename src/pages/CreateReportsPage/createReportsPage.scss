@@ -1,7 +1,94 @@
+@import "../../constans/variables.scss";
+
 .createReportsPage {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 100px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  //   align-items: center;
+  padding: 100px 0;
+
+  #btn-login {
+    display: none;
+  }
+
+  > div:nth-child(2) {
+    width: 30%;
+    border-right: 1px solid black;
+
+    div {
+      p {
+        display: flex;
+        font-size: 30px;
+        margin: 5px 10px;
+
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          width: 35px;
+          height: 35px;
+          margin-right: 10px;
+        }
+      }
+    }
+    .activeNav>p{
+        font-weight: 900;
+        >div {
+          border: 2px solid $color2;
+        }
+    }
+  }
+  .btnWizard{
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+  }
 }
+.selectCandidate,
+.selectCompany,
+.fillReport {
+  width: 70%;
+}
+
+@media screen and (max-width: 768px) {
+  .createReportsPage {
+    > div:nth-child(2) {
+      width: 26%;
+
+      div {
+        p {
+          flex-direction: column;
+          font-size: 20px;
+        }
+      }
+    }
+    .selectCandidate,
+    .selectCompany,
+    .fillReport {
+      width: 74%;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+    .createReportsPage {
+      > div:nth-child(2) {
+        width: 100%;
+        display: flex;
+  
+        div {
+            width: 33%;
+          p {
+            flex-direction: column;
+            font-size: 20px;
+          }
+        }
+      }
+      .selectCandidate,
+      .selectCompany,
+      .fillReport {
+        width: 100%;
+      }
+    }
+  }
