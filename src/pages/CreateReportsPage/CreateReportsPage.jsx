@@ -7,6 +7,8 @@ import SelectCompany from '../../components/SelectCompany/SelectCompany'
 import "./createReportsPage.scss"
 const CreateReportsPage = () => {
     const [page,setPage] = useState(1)
+    const [candidate,setCandidate] = useState("")
+    const [company,setCompany] = useState("")
     return (
         
         <div className="createReportsPage">
@@ -26,12 +28,12 @@ const CreateReportsPage = () => {
                     <span>3</span>
                     <span>Fill Report Details</span>
                 </div>
-                {/* <Info/>
-                <Info/> */}
+                {(page === 2 || page === 3 ) && <Info data = {candidate} title = "Candidate:"/>}
+                {page === 3 && <Info data = {company} title = "Company:"/>}
 
             </div>
-            {page === 1 && <SelectCandidate setPage = {setPage}/>}
-            {page === 2 && <SelectCompany setPage = {setPage}/>}
+            {page === 1 && <SelectCandidate setPage = {setPage} setCandidate={setCandidate}/>}
+            {page === 2 && <SelectCompany setPage = {setPage} setCompany={setCompany}/>}
             {page === 3 && <FillReport setPage = {setPage}/>}
         </div>
     )
