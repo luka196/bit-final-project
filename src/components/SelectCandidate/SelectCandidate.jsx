@@ -4,13 +4,13 @@ import Search from '../Search/Search'
 import "./selectCandidate.scss"
 import { dataContext } from '../../context'
 
-const SelectCandidate = ({setPage}) => {
+const SelectCandidate = ({setPage,setCandidate}) => {
     const { candidates } = useContext(dataContext)
     return (
         <div className="selectCandidate">
             SelectCandidate
             <Search/>
-            {candidates.map((e) => <Candidate data={e}/>)}
+            {candidates.map((e) => <Candidate data={e} setCandidate={setCandidate}/>)}
             <div>
                 <button onClick={() => setPage(2)}>NEXT</button>
             </div>

@@ -6,7 +6,7 @@ const FillReport = ({setPage}) => {
             FillReport
             <div>
              <p>Interview Date:</p>   
-            <input type= "date"/>
+            <input type= "date" />
             </div>
             <div>
             <label for="phase">Phase:</label>
