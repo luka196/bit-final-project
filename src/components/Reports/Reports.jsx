@@ -1,14 +1,16 @@
 import React from 'react'
 import "./reports.scss"
-const Reports = () => {
+
+const Reports = ({ data, openModal }) => {
+
     return (
 
-        <div className="reports">  
+        <div className="reports">
             <div>
-                <div>Company</div>
-                <div>Interview Date</div>
-                <div>Status <span>dsa</span></div>
-                
+                <div>{data.companyName}</div>
+                <div>{data.interviewDate}</div>
+                <div>{data.status} <button onClick={() => openModal(data)}>asd</button></div>
+
             </div>
 
         </div>

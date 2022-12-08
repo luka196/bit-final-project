@@ -1,15 +1,23 @@
-import React from "react";
-import "./fillReport.scss";
-const FillReport = ({ setPage }) => {
-  return (
-    <div className="fillReport">
-      <div>
-        <div>
-          <p>Interview Date:</p>
-          <input type="date" />
-        </div>
-        <div>
-          <label for="phase">Phase:</label>
+
+import React from 'react'
+import "./fillReport.scss"
+const FillReport = ({setPage}) => {
+    return (
+        <div className="fillReport">
+            FillReport
+            <div>
+             <p>Interview Date:</p>   
+            <input type= "date" />
+            </div>
+            <div>
+            <label for="phase">Phase:</label>
+
+                    <select name="phase" id="phase">
+                    <option value="cv">CV</option>
+                    <option value="hr">HR</option>
+                    <option value="technical">Technical</option>
+                    <option value="final">Final</option>
+                    </select>
 
           <select name="phase" id="phase">
           <option value="" disabled selected>-select-</option>

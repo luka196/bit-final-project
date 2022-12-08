@@ -3,12 +3,14 @@ import Search from '../Search/Search'
 import "./selectCompany.scss"
 import { dataContext } from '../../context'
 
-const SelectCompany = ({setPage}) => {
+const SelectCompany = ({setPage,setCompany}) => {
     const {companies} = useContext(dataContext)
     return (
         <div className="selectCompany">
             <Search/>
-            {companies.map((e) => <div className='company'>{e.name}</div>)}
+
+            {companies.map((e) => <div onClick={() => setCompany(e?.name)}>{e.name}</div>)}
+
             <div>
                 <button className="btnWizard" onClick={() => setPage(1)}>BACK</button>
                 <button className="btnWizard" onClick={() => setPage(3)}>NEXT</button>

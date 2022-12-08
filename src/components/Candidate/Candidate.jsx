@@ -1,8 +1,8 @@
 import React from 'react'
 import "./candidate.scss"
-const Candidate = ({data}) => {
+const Candidate = ({data,setCandidate}) => {
     return (
-        <div className="candidate">
+        <div className="candidate" onClick={() => setCandidate(data?.name)}>
 
             <img src={data?.avatar} alt="Image"/>
             <div>
