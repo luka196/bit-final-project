@@ -1,7 +1,20 @@
 .loginPage {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 100px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 0;
+
+//   #btn-rep {
+//     display: none;
+//   }
+//   #btn-crrep {
+//     display: none;
+//   }
+  #btn-login {
+    display: none;
+  }
+  #btn-logout {
+    display: none;
+  }
 }

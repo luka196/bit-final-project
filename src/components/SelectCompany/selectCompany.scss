@@ -1,0 +1,26 @@
+.selectCompany{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    >*{
+        width: 95%;
+    }
+    .company{
+        margin-bottom: 10px;
+        padding: 10px;
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+
+
+        -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
+    }
+    >:last-child{
+        display: flex;
+        justify-content: space-between;
+     
+    }
+
+}

@@ -8,11 +8,14 @@ const SelectCandidate = ({setPage,setCandidate}) => {
     const { candidates } = useContext(dataContext)
     return (
         <div className="selectCandidate">
-            SelectCandidate
             <Search/>
-            {candidates.map((e) => <Candidate data={e} setCandidate={setCandidate}/>)}
+
             <div>
-                <button onClick={() => setPage(2)}>NEXT</button>
+            {candidates.map((e) => <Candidate data={e}/>)}
+            </div>
+
+            <div>
+                <button className="btnWizard" onClick={() => setPage(2)}>NEXT</button>
             </div>
         </div>
     )
