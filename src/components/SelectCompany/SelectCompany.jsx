@@ -10,7 +10,7 @@ const SelectCompany = ({setPage,setCompany,selectedCompany}) => {
         <div className="selectCompany">
             <Search/>
 
-            {companies.map((e) => <div className={`${selectedCompany === e.name ? "click" : ""} company`}  onClick={() => setCompany(e.name)}>{e.name}</div>)}
+            {companies.map((e) => <div key={e.id} className={`${selectedCompany === e.name ? "click" : ""} company`}  onClick={() => setCompany(e.name)}>{e.name}</div>)}
 
             <div>
                 <button className="btnWizard" onClick={() => setPage(1)}>BACK</button>

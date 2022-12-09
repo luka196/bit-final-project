@@ -48,7 +48,7 @@ const FillReport = ({ setPage, candidate, company }) => {
 
         </div>
         <div>
-          <label for="phase">Phase:</label>
+          <label >Phase:</label>
 
           <select name="phase" id="phase" onChange={(e) => newReport.phase = e.target.value}>
             <option value="" disabled selected>-select-</option>
@@ -60,7 +60,7 @@ const FillReport = ({ setPage, candidate, company }) => {
           </select>
         </div>
         <div>
-          <label for="status">Status:</label>
+          <label >Status:</label>
 
           <select name="status" id="status" onChange={(e) => newReport.status = e.target.value}>
             <option value="" disabled selected>-select-</option>

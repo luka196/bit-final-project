@@ -18,7 +18,7 @@ const CandidatesPage = () => {
                 <h2>Candidates</h2>
                 <Search />
             </div>
-            {candidates?.map((e) => <Link to={`/single-candidates-page/${e.id}`}><Candidate data={e} /></Link>)}
+            {candidates?.map((e) => <Link to={`/single-candidates-page/${e.id}`}><Candidate key={e.id} data={e} /></Link>)}
             <Footer />
 
 
