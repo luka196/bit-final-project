@@ -3,6 +3,7 @@ import "./loginPage.scss"
 import { Link } from "react-router-dom"
 import Header from '../../components/Header/Header'
 import { useHistory } from "react-router-dom";
+import { DataProvider } from "../../context"
 
 const LoginPage = () => {
     const history = useHistory();
@@ -16,7 +17,7 @@ const LoginPage = () => {
         if (token.accessToken) {
             history.push("/reports-page")
         }
-    
+    console.log(token)
     }
     function fetchToken() {
         fetch("http://localhost:3333/login", {
@@ -32,19 +33,18 @@ const LoginPage = () => {
         })
             .then(res => res.json())
             .then(res => {
-                typeof res === "string" ? setErrorMessage(res) :  setRefresh(true) || setToken(res) 
+                typeof res === "string" ? setErrorMessage(res) :  setRefresh(true) || setToken(res.accessToken) 
             })
             .catch(err => console.log(err))
 
 
     }
-
     useEffect(() => {
         changePage()
     }, [refresh])
 
-    console.log(typeof token,token)
     return (
+        <DataProvider value={{token}}>
         <div className="loginPage">
             <Header />
             <div className='loginModal'>
@@ -61,6 +61,7 @@ const LoginPage = () => {
                 </button>
             </div>
         </div>
+        </DataProvider>
     )
 }
 

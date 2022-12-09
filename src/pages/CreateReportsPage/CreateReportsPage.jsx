@@ -12,10 +12,7 @@ const CreateReportsPage = () => {
     const [page,setPage] = useState(1)
     const [candidate,setCandidate] = useState(null);
     const [company,setCompany] = useState(null);
-   
 
-    console.log(candidate)
-    
     return (
         
         <div className="createReportsPage">
@@ -36,12 +33,14 @@ const CreateReportsPage = () => {
                     Fill Report Details</p>
                 </div>
                 {(page === 2 || page === 3 ) && <Info data = {candidate?.name} title = "Candidate:"/>}
+
                 {page === 3 && <Info data = {company} title = "Company:"/>}
 
             </div>
             {page === 1 && <SelectCandidate setPage = {setPage} selectedCandidate={candidate} setCandidate={setCandidate}/>}
             {page === 2 && <SelectCompany setPage = {setPage} selectedCompany={company} setCompany={setCompany}/>}
             {page === 3 && <FillReport setPage = {setPage}/>}
+
             <Footer/>
 
         </div>

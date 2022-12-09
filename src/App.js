@@ -33,7 +33,6 @@ function App() {
       .then(res => setUsers(res))
   }, [])
 
-  console.log(candidates,companies,reports,users)
 
   return (
 
