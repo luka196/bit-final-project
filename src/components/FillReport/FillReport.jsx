@@ -1,57 +1,69 @@
-import React,{useState,useContext} from 'react'
-import "./fillReport.scss"
-import { dataContext } from '../../context'
+import React, { useState, useContext } from "react";
+import "./fillReport.scss";
+import { dataContext } from "../../context";
 
 const FillReport = ({ setPage, candidate, company }) => {
-  const { token } = useContext(dataContext)
-  const [submitFail,setSubmitFail] = useState("")
+  const { token } = useContext(dataContext);
+  const [submitFail, setSubmitFail] = useState("");
   const newReport = {
-    "candidateId": candidate?.id,
-    "candidateName": candidate?.name,
-    "companyId": company?.id,
-    "companyName": company?.name,
-    "interviewDate": "",
-    "phase": "",
-    "status": "",
-    "note": "",
-  }
+    candidateId: candidate?.id,
+    candidateName: candidate?.name,
+    companyId: company?.id,
+    companyName: company?.name,
+    interviewDate: "",
+    phase: "",
+    status: "",
+    note: "",
+  };
   function submitReport() {
-    if (newReport.interviewDate !== "" && newReport.phase !== "" && newReport.status !== "") {
+    if (
+      newReport.interviewDate !== "" &&
+      newReport.phase !== "" &&
+      newReport.status !== ""
+    ) {
       fetch("http://localhost:3333/664/api/reports", {
-        "method": "POST",
-        "headers": {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`  
-
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
-        "body": JSON.stringify(newReport)
+        body: JSON.stringify(newReport),
       })
-        .then(res => res.json())
+        .then((res) => res.json())
         .then((result) => {
-          console.log('Success:', result);
+          console.log("Success:", result);
         })
         .catch((error) => {
-          console.error('Error:', error);
+          console.error("Error:", error);
         });
-    }
-    else {
-      setSubmitFail("Please select all fields")
+    } else {
+      setSubmitFail("Please select all fields");
     }
   }
- return (
+
+  return (
     <div className="fillReport">
       <div>
         <div>
           <p>Interview Date:</p>
 
-          <input type="date" onChange={(e) => newReport.interviewDate = e.target.value} />
-
+          <input
+            type="date"
+            onChange={(e) => (newReport.interviewDate = e.target.value)}
+          />
         </div>
         <div>
-          <label >Phase:</label>
+          <label>Phase:</label>
 
-          <select name="phase" id="phase" onChange={(e) => newReport.phase = e.target.value}>
-            <option value="" disabled selected>-select-</option>
+          <select
+            name="phase"
+            id="phase"
+            onChange={(e) => (newReport.phase = e.target.value)}
+            defaultValue="-select-"
+          >
+            <option value="-select-" disabled >
+              -select-
+            </option>
 
             <option value="cv">CV</option>
             <option value="hr">HR</option>
@@ -60,11 +72,17 @@ const FillReport = ({ setPage, candidate, company }) => {
           </select>
         </div>
         <div>
-          <label >Status:</label>
+          <label>Status:</label>
 
-          <select name="status" id="status" onChange={(e) => newReport.status = e.target.value}>
-            <option value="" disabled selected>-select-</option>
-
+          <select
+            name="status"
+            id="status"
+            defaultValue="-select-"
+            onChange={(e) => (newReport.status = e.target.value)}
+          >
+            <option value="-select-" disabled >
+              -select-
+            </option>
             <option value="passed">Passed</option>
             <option value="declined">Declined</option>
           </select>
@@ -72,14 +90,25 @@ const FillReport = ({ setPage, candidate, company }) => {
       </div>
       <div className="notes">
         <p>Notes:</p>
-        <textarea type="textarea" onChange={(e) => newReport.note = e.target.value} />
+        <textarea
+          type="textarea"
+          onChange={(e) => (newReport.note = e.target.value)}
+        />
       </div>
       <div>
         <button className="btnWizard" onClick={() => setPage(2)}>
           BACK
         </button>
         <span>{submitFail}</span>
-        <button className="btnWizard" onClick={() => {submitReport();console.log(token)}}>SUBMIT</button>
+        <button
+          className="btnWizard"
+          onClick={() => {
+            submitReport();
+            console.log(token);
+          }}
+        >
+          SUBMIT
+        </button>
       </div>
     </div>
   );

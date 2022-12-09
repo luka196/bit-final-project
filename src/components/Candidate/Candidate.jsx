@@ -7,8 +7,8 @@ const Candidate = ({ data, setCandidate, isSelected }) => {
     <div
       className={`${isSelected ? "click" : ""} candidate`}
       onClick={() => {
+        // typeof setCandidate === "function" && setCandidate(data);
         setCandidate(data);
-
       }}
     >
       <img src={data?.avatar} alt="Image" />
