@@ -1,4 +1,3 @@
-
 import React,{useState,useContext} from 'react'
 import "./fillReport.scss"
 import { dataContext } from '../../context'
@@ -39,20 +38,21 @@ const FillReport = ({ setPage, candidate, company }) => {
       setSubmitFail("Please select all fields")
     }
   }
-
-  return (
+ return (
     <div className="fillReport">
       <div>
         <div>
           <p>Interview Date:</p>
+
           <input type="date" onChange={(e) => newReport.interviewDate = e.target.value} />
+
         </div>
         <div>
           <label for="phase">Phase:</label>
 
-
           <select name="phase" id="phase" onChange={(e) => newReport.phase = e.target.value}>
             <option value="" disabled selected>-select-</option>
+
             <option value="cv">CV</option>
             <option value="hr">HR</option>
             <option value="technical">Technical</option>
@@ -64,6 +64,7 @@ const FillReport = ({ setPage, candidate, company }) => {
 
           <select name="status" id="status" onChange={(e) => newReport.status = e.target.value}>
             <option value="" disabled selected>-select-</option>
+
             <option value="passed">Passed</option>
             <option value="declined">Declined</option>
           </select>

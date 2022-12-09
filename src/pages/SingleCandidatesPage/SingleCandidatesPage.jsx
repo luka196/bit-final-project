@@ -41,9 +41,11 @@ const SingleCandidatesPage = () => {
                 <div>🠟 Interview Date</div>
                 <div>🠟 Status</div>
             </div>
+
             {/* {singleCandidateReports?.map((e) => <Reports openModal={x => handleModalData(x)} data={e} />)} */}
-            {singleCandidateReports?.map((e) => <Reports openModal={setIsModalOpen} setModalData={setModalData} data={e} />)}
+            {singleCandidateReports?.map((e) => <Reports key={e.id} openModal={setIsModalOpen} setModalData={setModalData} data={e} />)}
             {isModalOpen && <Modal data={modalData} closeModal={setIsModalOpen}/>}
+
             <Footer />
         </div>
     )

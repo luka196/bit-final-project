@@ -16,7 +16,7 @@ const ReportAdmin = ({data, openModal, setModalData}) => {
                <span>Interview Date</span>
             </div> 
            <div>
-               <p>{data.status}</p>
+               <p>{data?.status}</p>
                <span>Status</span>
             </div> 
            <div>

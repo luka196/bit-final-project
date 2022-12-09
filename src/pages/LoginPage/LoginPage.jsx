@@ -47,7 +47,8 @@ const LoginPage = () => {
         <DataProvider value={{token}}>
         <div className="loginPage">
             <Header />
-            <div>
+            <div className='loginModal'>
+                <h1>Log In</h1>
                 <div>Username:
                     <input onChange={e => setMail(e.target.value)} type="username" />
                 </div>

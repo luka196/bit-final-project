@@ -9,16 +9,20 @@
     width: 95%;
   }
 
-  // .search {
-  //   width: 100%;
-  // }
   > div {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    
   }
+  div {
+    button {
+      cursor: pointer;
+    }
+  }
+
   > :last-child {
-    // width: 100%;
     display: flex;
     justify-content: end;
   }

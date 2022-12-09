@@ -11,17 +11,23 @@
     display: none;
   }
 
+  #btn-crrep{
+    background-color: #3f6179;
+  }
+
   > div:nth-child(2) {
     width: 30%;
     border-right: 1px solid black;
 
     div {
+      cursor: default;
+
       p {
         display: flex;
         font-size: 30px;
         margin: 5px 10px;
 
-        div {
+        span {
           display: flex;
           justify-content: center;
           align-items: center;
