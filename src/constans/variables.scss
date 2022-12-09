@@ -1,3 +1,12 @@
 $color1: #B1A296;
 $color2: #f5f5f5;
+$color3: #a37a59;
 $btn-color: #7395AE;
+@mixin card-design {
+    -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
+        border: 2px solid $color2;
+        background-color: $color1;
+        border-radius: 10px;
+}
