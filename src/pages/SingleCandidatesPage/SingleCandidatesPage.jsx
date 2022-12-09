@@ -1,5 +1,5 @@
 
-import React, { useContext } from 'react'
+import React, { useContext , useState} from 'react'
 import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
 import Info from '../../components/Info/Info'
@@ -13,16 +13,18 @@ import { useRouteMatch } from 'react-router-dom'
 const SingleCandidatesPage = () => {
     const { candidates } = useContext(dataContext)
     const { reports } = useContext(dataContext)
+    const [modalData,setModalData] = useState({})
+    const [isModalOpen,setIsModalOpen] = useState(false)
     const match = useRouteMatch()
     const singleCandidate = candidates?.find((e) => e.id == match.params.id)
     const singleCandidateReports = reports?.filter((e) => e.candidateId == match.params.id)
-    console.log(singleCandidate);
-    console.log(singleCandidateReports);
+    // console.log(singleCandidate);
+    // console.log(singleCandidateReports);
     
-    const handleModalData = data => {
-        console.log(data)
-    };
-
+    // const handleModalData = x => {
+    //     console.log(x)
+    // };
+    
     return (
         <div className="singleCandidatesPage">
             <Header />
@@ -35,12 +37,13 @@ const SingleCandidatesPage = () => {
             </div>
             <h2>Reports</h2>
             <div className="table">
-                <div>🠟Company</div>
-                <div>🠟Interview Date</div>
-                <div>🠟Status</div>
+                <div>🠟 Company</div>
+                <div>🠟 Interview Date</div>
+                <div>🠟 Status</div>
             </div>
-            {singleCandidateReports?.map((e) => <Reports openModal={data => handleModalData(data)} data={e} />)}
-            {<Modal />}
+            {/* {singleCandidateReports?.map((e) => <Reports openModal={x => handleModalData(x)} data={e} />)} */}
+            {singleCandidateReports?.map((e) => <Reports openModal={setIsModalOpen} setModalData={setModalData} data={e} />)}
+            {isModalOpen && <Modal data={modalData} closeModal={setIsModalOpen}/>}
             <Footer />
         </div>
     )

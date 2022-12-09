@@ -11,7 +11,7 @@ const SelectCandidate = ({setPage,setCandidate}) => {
             <Search/>
 
             <div>
-            {candidates.map((e) => <Candidate data={e}/>)}
+            {candidates.map((e) => <Candidate data={e} setCandidate={setCandidate}/>)}
             </div>
 
             <div>

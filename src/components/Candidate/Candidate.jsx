@@ -2,7 +2,7 @@ import React from 'react'
 import "./candidate.scss"
 const Candidate = ({data,setCandidate}) => {
     return (
-        <div className="candidate" onClick={() => setCandidate(data?.name)}>
+        <div className="candidate" onClick={() => setCandidate(data)}>
 
             <img src={data?.avatar} alt="Image"/>
             <div>
