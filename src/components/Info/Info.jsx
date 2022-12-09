@@ -6,6 +6,7 @@ const Info = ({data,title}) => {
            <div>
                 <h2>{title}</h2>
                <p>{data}</p>
+
            </div>
         </div>
     )

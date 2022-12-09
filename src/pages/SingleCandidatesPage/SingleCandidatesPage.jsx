@@ -39,7 +39,7 @@ const SingleCandidatesPage = () => {
                 <div>🠟Interview Date</div>
                 <div>🠟Status</div>
             </div>
-            {singleCandidateReports?.map((e) => <Reports openModal={data => handleModalData(data)} data={e} />)}
+            {singleCandidateReports?.map((e) => <Reports key={e.id} openModal={data => handleModalData(data)} data={e} />)}
             {<Modal />}
             <Footer />
         </div>

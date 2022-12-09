@@ -5,19 +5,23 @@
         width: 95%;
       }
     }
+   
+
     .candidate {
       display: flex;
       align-items: center;
       width: 49%;
       border: 1px solid black;
       margin: 10px 0;
+      cursor: pointer;
 
-      -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
-        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
+      &:hover {
+        background-color: $color3;
+        transition: background-color 0.1s ease-out 10ms;
+      }
 
       > img {
-        height: 80px;
+        height: 140px;
         padding: 5px;
         font-size: 15px;
       }
@@ -28,8 +32,14 @@
       p{
         font-size: 15px;
       }
+
+      @include card-design
     }
- 
+  
+    .click {
+      background-color: $color3;
+    }
+
 
 @media screen and (max-width: 768px) {
 

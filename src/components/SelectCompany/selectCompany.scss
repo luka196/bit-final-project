@@ -1,3 +1,5 @@
+@import '../../constans/variables.scss';
+
 .selectCompany{
     display: flex;
     flex-wrap: wrap;
@@ -5,6 +7,9 @@
     >*{
         width: 95%;
     }
+
+   
+
     .company{
         margin-bottom: 10px;
         padding: 10px;
@@ -12,15 +17,29 @@
         display: flex;
         align-items: center;
 
-
-        -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
-        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
+        &:hover {
+            background-color: $color1;
+            transition: background-color 0.1s ease-out 10ms;
+            cursor: pointer;
+          }
+    
+          &:hover {
+            background-color: $color3;
+          }
+        
+          @include card-design
+    }
+    .click {
+        background-color: aqua;
     }
     >:last-child{
         display: flex;
         justify-content: space-between;
-     
+        cursor: pointer;
+       
+        button {
+            cursor: pointer;
+        }
     }
 
 }

@@ -1,0 +1,27 @@
+@import "../../constans/variables.scss";
+
+.singleCandidatesPage{
+    .info-div {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        width: 60%;
+        height: 30vh;
+        
+    }
+
+    .info {
+        width: 45%;
+        padding: 8px;
+        @include card-design;
+        
+
+  
+        div {
+          > p {
+            padding: 15px;
+          }
+        }
+      }
+}

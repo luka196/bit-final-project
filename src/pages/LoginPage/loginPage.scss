@@ -1,20 +1,68 @@
+@import "../../constans/variables.scss";
+
+
 .loginPage {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 100px 0;
+  min-height: 100vh;
 
-//   #btn-rep {
-//     display: none;
-//   }
-//   #btn-crrep {
-//     display: none;
-//   }
+  h1 {
+    letter-spacing: 3px;
+  }
+
   #btn-login {
     display: none;
   }
   #btn-logout {
     display: none;
   }
+
+  .loginModal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 500px;
+    font-size: 25px;
+    @include card-design;
+    border-radius: 20px;
+   
+
+    h1{
+      margin-bottom: 50px;
+    }
+
+    div{
+      margin-bottom: 30px;
+
+      input{
+        padding: 6px;
+        border-radius: 8px;
+      }
+
+    }
+
+    p{
+      color: red;
+    }
+    button{
+      margin-top: 25px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background-color: $color2;
+      letter-spacing: 1px;
+      font-size: 18px;
+
+      &:hover{
+        background-color: #3f6179;
+        color: $color2;
+        border: 2px solid $color2;
+      }
+    }
+  }
+
 }

@@ -5,11 +5,13 @@ import {Link} from "react-router-dom"
 
 
 
+
+
 const Header = () => {
     return (
         <div className="header">
 
-            <h1>naslov</h1>
+            <h1>Bit project</h1>
             <div>
                 <button id="btn-rep">
                 <Link to="/reports-page">Reports</Link>
