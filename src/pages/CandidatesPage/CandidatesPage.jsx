@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import Candidate from "../../components/Candidate/Candidate";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Search from "../../components/Search/Search";
-import "./candidatesPage.scss";
-import { dataContext } from "../../context";
 import { Link } from "react-router-dom";
-const CandidatesPage = () => {
-  const { candidates } = useContext(dataContext);
+
+import "./candidatesPage.scss";
+
+const CandidatesPage = ({candidates}) => {
   return (
     <div className="candidatesPage">
       <Header />
@@ -16,7 +16,7 @@ const CandidatesPage = () => {
         <Search />
       </div>
       {candidates?.map((e) => (
-        <Link key={e.id} to={`/single-candidates-page/${e.id}`}>
+        <Link key={e.id} to={`/candidates/${e.id}`}>
           <Candidate setCandidate={() => {}} data={e} />
         </Link>
       ))}

@@ -3,7 +3,7 @@ import './modal.scss'
 
 const Modal = ({data,closeModal}) => {
     console.log(data)
-  return (
+    return (
     <div className='modal'>
         <div>
             <div>

@@ -5,18 +5,22 @@ import Header from '../../components/Header/Header'
 import { useHistory } from "react-router-dom";
 import { DataProvider } from "../../context"
 
+// This component needs a bit refactoring
 const LoginPage = () => {
     const history = useHistory();
     const [token, setToken] = useState({})
+
 
     const [mail, setMail] = useState("")
     const [pass, setPass] = useState("")
     const [refresh, setRefresh] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
     function changePage() {
+        // token.accessToken returns undefined :) think why
         if (token.accessToken) {
             history.push("/reports-page")
         }
+        // lets save the token to the local storage so the user doesn't need to login every time
     console.log(token)
     }
     function fetchToken() {

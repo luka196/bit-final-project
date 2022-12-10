@@ -4,9 +4,14 @@ import Header from '../../components/Header/Header'
 import ReportAdmin from '../../components/ReportAdmin/ReportAdmin'
 import Search from '../../components/Search/Search'
 import Modal from '../../components/Modal/Modal'
+// Try to clean up code a bit, for example: remove unused 
+// imports before pushing it to main branch 
+// and commented code as well
+
 import {Link, useLocation} from "react-router-dom"
 import { dataContext } from '../../context'
-import "./reportsPage.scss"
+import "./reportsPage.scss";
+
 const ReportsPage = () => {
     const {reports} = useContext(dataContext)
     const [modalData,setModalData] = useState({})
