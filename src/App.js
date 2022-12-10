@@ -40,14 +40,21 @@ function App() {
       <div className="app">
         <Switch>
           <Route exact path="/">
-            <CandidatesPage />
+
+            {/* we can propagate candidates data directly from App parent component, no need for context */}
+            <CandidatesPage candidates={candidates} />
           </Route>
-          <Route path="/single-candidates-page/:id">
+          <Route exact path="/candidates">
+            <CandidatesPage candidates={candidates} />
+          </Route>
+          {/* lets rename routes to something more user friendly like reports, login... */}
+          <Route path="/candidates/:id">
             <SingleCandidatesPage />
           </Route>
           <Route path="/login-page">
             <LoginPage />
           </Route>
+          {/* Lets make this two routes visible only when the user is logged in */}
           <Route path="/reports-page">
             <ReportsPage />
           </Route>
