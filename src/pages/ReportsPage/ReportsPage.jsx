@@ -4,7 +4,6 @@ import Header from '../../components/Header/Header'
 import ReportAdmin from '../../components/ReportAdmin/ReportAdmin'
 import Search from '../../components/Search/Search'
 import Modal from '../../components/Modal/Modal'
-import {Link, useLocation} from "react-router-dom"
 import { dataContext } from '../../context'
 import "./reportsPage.scss"
 const ReportsPage = () => {

@@ -1,3 +1,5 @@
+@import "../../constans/variables.scss";
+
 .singleCandidatesPage {
   display: flex;
   flex-wrap: wrap;
@@ -23,43 +25,17 @@
   > h2 {
     width: 95%;
     margin: 20px;
-    background-color: rgb(57, 10, 10);
+    @include big-text-size;
   }
   .table {
     width: 95%;
-    background-color: rgb(9, 31, 31);
+    background-color: #3f6179;
     display: flex;
 
     > div {
       padding: 10px;
       width: 34%;
-      border: 1px solid red;
-    }
-  }
-
-  .reports {
-    width: 95%;
-    background-color: rgb(54, 98, 98);
-
-    > div {
-      display: flex;
-
-      div {
-        position: relative;
-        padding: 10px;
-        width: 34%;
-        border: 1px solid red;
-
-        span {
-          border-left: 2px solid red;
-          width: 40px;
-          height: 100%;
-          padding: 10px;
-          position: absolute;
-          right: 0px;
-          top: 0;
-        }
-      }
+      border: 1px solid $color2;
     }
   }
 
@@ -77,13 +53,9 @@
     .table {
       width: 100%;
     }
-
-    .reports {
-      width: 100%;
-    }
   }
 
-  @media screen and (max-width: 425px) {    
+  @media screen and (max-width: 425px) {
     > h2 {
       margin: 5px;
     }

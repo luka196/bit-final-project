@@ -1,0 +1,107 @@
+@import "../../constans/variables.scss";
+
+.reportsPage {
+  .reportAdmin {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin-bottom: 15px;
+    @include card-design;
+    overflow: hidden;
+
+    > div {
+      width: 13%;
+      background-color: $color1;
+      color: $color2;
+      border-left: 1px solid $color2;
+      padding: 5px;
+
+      p {
+        @include big-text-size;
+      }
+      span {
+        @include small-text-size;
+      }
+    }
+
+    > :first-child {
+      border: none;
+      width: 40%;
+    }
+    > :nth-child(2) {
+      width: 30%;
+    }
+    > :nth-child(3) {
+      width: 25%;
+    }
+    > :nth-child(4) {
+      width: 120px;
+    }
+
+    > :last-child {
+      display: flex;
+      justify-content: space-around;
+      width: 100px;
+
+      button {
+        width: 30px;
+        background-color: $color1;
+        border: none;
+
+        img {
+          width: 30px;
+          background-color: $color1;
+          color: $color1;
+        }
+
+        .closeBtn {
+          width: 17px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .reportAdmin {
+      flex-wrap: wrap;
+      > :first-child {
+        width: 50%;
+        border-bottom: 1px solid $color2;
+      }
+      > :nth-child(2) {
+        width: 50%;
+        border-bottom: 1px solid $color2;
+      }
+      > :nth-child(3) {
+        width: 40%;
+      }
+      > :nth-child(4) {
+        width: 40%;
+      }
+      > :nth-child(5) {
+        width: 20%;
+      }
+    }
+  }
+  @media screen and (max-width: 425px) {
+    .reportAdmin {
+      flex-wrap: wrap;
+      > :first-child {
+        width: 50%;
+        border-bottom: 1px solid $color2;
+      }
+      > :nth-child(2) {
+        width: 50%;
+        border-bottom: 1px solid $color2;
+      }
+      > :nth-child(3) {
+        width: 40%;
+      }
+      > :nth-child(4) {
+        width: 40%;
+      }
+      > :nth-child(5) {
+        width: 20%;
+      }
+    }
+  }
+}

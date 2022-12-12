@@ -8,6 +8,8 @@
         justify-content: space-around;
         width: 60%;
         height: 30vh;
+
+
         
     }
 
@@ -19,8 +21,17 @@
 
   
         div {
-          > p {
+          // word-break: normal;
+          word-break:break-word;
+
+          > h2 {
+            @include big-text-size;
             padding: 15px;
+          }
+
+          > p{
+            @include small-text-size;
+            font-size: large;
           }
         }
       }

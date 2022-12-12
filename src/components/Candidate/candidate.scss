@@ -1,51 +1,62 @@
 @import "../../constans/variables.scss";
 
-    .candidatesPage{
-      .candidate{
-        width: 95%;
-      }
-    }
-   
-
-    .candidate {
-      display: flex;
-      align-items: center;
-      width: 49%;
-      border: 1px solid black;
-      margin: 10px 0;
-      cursor: pointer;
-
-      &:hover {
-        background-color: $color3;
-        transition: background-color 0.1s ease-out 10ms;
-      }
-
-      > img {
-        height: 140px;
-        padding: 5px;
-        font-size: 15px;
-      }
-      h2 {
-        padding-bottom: 5px;
-        font-size: 25px;
-      }
-      p{
-        font-size: 15px;
-      }
-
-      @include card-design
-    }
-  
-    .click {
+.candidatesPage {
+  .candidate {
+    width: 95%;
+    &:hover {
       background-color: $color3;
     }
+  }
+}
 
+.candidate {
+  display: flex;
+  align-items: center;
+  width: 49%;
+  border: 1px solid black;
+  margin: 10px 0;
+  cursor: pointer;
+
+
+  div {
+    width: 100%;
+    word-break: break-all;
+  }
+
+  &:hover {
+    background-color: $color3;
+    transition: background-color 0.1s ease-out 10ms;
+  }
+
+  > img {
+    height: 140px;
+    padding: 5px;
+    font-size: 15px;
+  }
+  h2 {
+    @include big-text-size;
+  }
+  p {
+    @include small-text-size;
+  }
+
+  @include card-design;
+}
+
+.click {
+  background-color: $color3;
+}
 
 @media screen and (max-width: 768px) {
+  .candidate {
+    width: 100%;
+    margin: 0 0 5px 20px;
+  }
+}
 
-      .candidate {
-        width: 100%;
-        margin: 0 0 5px 0
-      }
-    }
-
+@media screen and (max-width: 425px) {
+  .candidate {
+    width: 100%;
+    margin-left: 20px;
+  }
+}
