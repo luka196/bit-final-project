@@ -6,13 +6,15 @@ import Search from "../../components/Search/Search";
 import "./candidatesPage.scss";
 import { dataContext } from "../../context";
 import { Link } from "react-router-dom";
+
 const CandidatesPage = () => {
   const { candidates } = useContext(dataContext);
+  
   return (
     <div className="candidatesPage">
       <Header />
       <div id="candidate">
-        <h2>Candidates</h2>
+        <h2>Candidates:</h2>
         <Search />
       </div>
       {candidates?.map((e) => (

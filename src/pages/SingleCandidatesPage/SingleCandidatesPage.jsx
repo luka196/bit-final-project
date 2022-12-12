@@ -35,7 +35,7 @@ const SingleCandidatesPage = () => {
                 <Info data={singleCandidate?.email} title='Email:' />
                 <Info data={singleCandidate?.education} title='Education:' />
             </div>
-            <h2>Reports</h2>
+            <h2>Reports:</h2>
             <div className="table">
                 <div>🠟 Company</div>
                 <div>🠟 Interview Date</div>
