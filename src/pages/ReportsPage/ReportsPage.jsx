@@ -4,19 +4,34 @@ import Header from '../../components/Header/Header'
 import ReportAdmin from '../../components/ReportAdmin/ReportAdmin'
 import Search from '../../components/Search/Search'
 import Modal from '../../components/Modal/Modal'
+import { Link, useLocation } from "react-router-dom"
 import { dataContext } from '../../context'
 import "./reportsPage.scss"
+import ModalDetails from '../../components/ModalDetails/ModalDetails'
+import ModalDelete from '../../components/ModalDelete/ModalDelete'
+
 const ReportsPage = () => {
-    const {reports} = useContext(dataContext)
-    const [modalData,setModalData] = useState({})
-    const [isModalOpen,setIsModalOpen] = useState(false)
+    const { reports } = useContext(dataContext)
+    const [modalData, setModalData] = useState(null);
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+
+    console.log(modalData)
+
     return (
         <div className="reportsPage">
-            <Header/>
-            <Search/>
-            {reports?.map((e) => <ReportAdmin openModal={setIsModalOpen} setModalData={setModalData} data = {e} />)}
-            {isModalOpen && <Modal data={modalData} closeModal={setIsModalOpen}/>}
-            <Footer/>
+            <Header />
+            <Search />
+            {reports?.map((e) => <ReportAdmin setModalData={setModalData} data={e} setIsDeleteModalOpen={setIsDeleteModalOpen} />)}
+
+            <Modal isOpenModal={modalData} closeModal={() => setModalData(null)}>
+                <ModalDetails data={modalData} />
+                {/* <ModalDetails/> */}
+            </Modal>
+            <Modal isOpenModal={isDeleteModalOpen} closeModal={() => setIsDeleteModalOpen(false)}>
+                {/* <ModalDelete /> */}
+                <ModalDelete/>
+            </Modal>
+            <Footer />
         </div>
     )
 }

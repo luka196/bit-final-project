@@ -5,7 +5,7 @@ import Header from '../../components/Header/Header'
 import Info from '../../components/Info/Info'
 import Reports from '../../components/Reports/Reports'
 import "./singleCandidatesPage.scss"
-import Modal from '../../components/Modal/Modal'
+import ModalDetails from '../../components/ModalDetails/ModalDetails'
 import { dataContext } from '../../context'
 import { useRouteMatch } from 'react-router-dom'
 
@@ -14,7 +14,7 @@ const SingleCandidatesPage = () => {
     const { candidates } = useContext(dataContext)
     const { reports } = useContext(dataContext)
     const [modalData,setModalData] = useState({})
-    const [isModalOpen,setIsModalOpen] = useState(false)
+    const [isDetailsModalOpen,setIsDetailsModalOpen] = useState(false)
     const match = useRouteMatch()
     const singleCandidate = candidates?.find((e) => e.id == match.params.id)
     const singleCandidateReports = reports?.filter((e) => e.candidateId == match.params.id)
@@ -43,8 +43,8 @@ const SingleCandidatesPage = () => {
             </div>
 
             {/* {singleCandidateReports?.map((e) => <Reports openModal={x => handleModalData(x)} data={e} />)} */}
-            {singleCandidateReports?.map((e) => <Reports key={e.id} openModal={setIsModalOpen} setModalData={setModalData} data={e} />)}
-            {isModalOpen && <Modal data={modalData} closeModal={setIsModalOpen}/>}
+            {singleCandidateReports?.map((e) => <Reports key={e.id} openDetailsModal={setIsDetailsModalOpen} setModalData={setModalData} data={e} />)}
+            {isDetailsModalOpen && <ModalDetails data={modalData} closeDetailsModal={setIsDetailsModalOpen}/>}
 
             <Footer />
         </div>
