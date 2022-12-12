@@ -3,18 +3,17 @@ import "./loginPage.scss"
 import { Link } from "react-router-dom"
 import Header from '../../components/Header/Header'
 import { useHistory } from "react-router-dom";
-import { DataProvider } from "../../context"
+
 
 const LoginPage = () => {
     const history = useHistory();
-    const [token, setToken] = useState({})
-
     const [mail, setMail] = useState("")
     const [pass, setPass] = useState("")
     const [refresh, setRefresh] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
     function changePage() {
-        if (token.accessToken) {
+        const token = localStorage.getItem("token");
+        if (token) {
             history.push("/reports-page")
         }
     console.log(token)
@@ -33,7 +32,10 @@ const LoginPage = () => {
         })
             .then(res => res.json())
             .then(res => {
-                typeof res === "string" ? setErrorMessage(res) :  setRefresh(true) || setToken(res.accessToken) 
+                typeof res === "string" ? setErrorMessage(res) :  setRefresh(true) ; 
+                if (res.accessToken) {
+                localStorage.setItem("token", res.accessToken)
+                }
             })
             .catch(err => console.log(err))
 
@@ -44,7 +46,7 @@ const LoginPage = () => {
     }, [refresh])
 
     return (
-        <DataProvider value={{token}}>
+       
         <div className="loginPage">
             <Header />
             <div className='loginModal'>
@@ -61,7 +63,7 @@ const LoginPage = () => {
                 </button>
             </div>
         </div>
-        </DataProvider>
+
     )
 }
 

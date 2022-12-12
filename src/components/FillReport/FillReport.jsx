@@ -3,7 +3,8 @@ import "./fillReport.scss";
 import { dataContext } from "../../context";
 
 const FillReport = ({ setPage, candidate, company }) => {
-  const { token } = useContext(dataContext);
+  // const { token } = useContext(dataContext);
+  const token = localStorage.getItem("token");
   const [submitFail, setSubmitFail] = useState("");
   const newReport = {
     candidateId: candidate?.id,
@@ -15,6 +16,9 @@ const FillReport = ({ setPage, candidate, company }) => {
     status: "",
     note: "",
   };
+  
+
+  console.log(token,newReport,candidate)
   function submitReport() {
     if (
       newReport.interviewDate !== "" &&
@@ -49,7 +53,8 @@ const FillReport = ({ setPage, candidate, company }) => {
 
           <input
             type="date"
-            onChange={(e) => (newReport.interviewDate = e.target.value)}
+            onChange={(e) => {let date = new Date(e.target.value) ; date = date.toString() ; newReport.interviewDate = date
+            }}
           />
         </div>
         <div>
