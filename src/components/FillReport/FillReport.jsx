@@ -100,20 +100,22 @@ const FillReport = ({ setPage, candidate, company }) => {
           onChange={(e) => (newReport.note = e.target.value)}
         />
       </div>
-      <div>
+      <div className="btn-msg">
         <button className="btnWizard" onClick={() => setPage(2)}>
           BACK
         </button>
-        <span>{submitFail}</span>
-        <button
-          className="btnWizard"
-          onClick={() => {
-            submitReport();
-            console.log(token);
-          }}
-        >
-          SUBMIT
-        </button>
+        <div >
+          <button
+            className="btnWizard"
+            onClick={() => {
+              submitReport();
+              console.log(token);
+            }}
+            >
+            SUBMIT
+          </button>
+            <p className="msg">{submitFail}</p>
+        </div>
       </div>
     </div>
   );

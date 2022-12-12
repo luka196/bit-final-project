@@ -39,6 +39,8 @@
       color: $color2;
       @include card-design;
       
+      
+      
       img {
         width: 40%;
         margin: 10px 0;
@@ -50,7 +52,8 @@
         align-items: center;
         justify-content: center;
         padding-bottom: 10px;
-        word-break: break-all;
+        
+       
       }
     }
 
