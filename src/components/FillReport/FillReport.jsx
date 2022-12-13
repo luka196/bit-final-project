@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import "./fillReport.scss";
+import { dataContext } from "../../context";
 
 const FillReport = ({ setPage, candidate, company }) => {
   const { token } = useContext(dataContext);

@@ -50,6 +50,7 @@ const LoginPage = () => {
     }, [token])
 
     return (
+        <div>
         <div className="loginPage">
             <Header />
             <div className='loginModal'
@@ -84,7 +85,6 @@ const LoginPage = () => {
           Log In
         </button>
       </div>
-    </div>
   );
 };
 
