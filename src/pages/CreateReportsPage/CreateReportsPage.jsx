@@ -27,14 +27,14 @@ const CreateReportsPage = () => {
         </div>
         <span className="last-report"></span>
 
-        {!(page === 1) && (
-          <div className="report-pick">
-            {(page === 2 || page === 3) && (
-              <Info data={candidate?.name} title="Candidate:" />
-            )}
-            {page === 3 && <Info data={company} title="Company:" />}
-          </div>
-        )}
+         {!(page ===1) && (
+           <div className="report-pick">
+          {(page === 2 || page === 3) && (
+            <Info data={candidate?.name} title="Candidate:" />
+          )}
+          {page === 3 && <Info data={company.name} title="Company:" />}
+        </div>
+          )}
       </div>
       {page === 1 && (
         <SelectCandidate

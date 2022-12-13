@@ -1,24 +1,25 @@
-import React, {useContext, useState} from 'react'
+import React, { useContext, useState } from 'react'
 import Search from '../Search/Search'
 import "./selectCompany.scss"
 import { dataContext } from '../../context'
 
-const SelectCompany = ({setPage,setCompany,selectedCompany}) => {
-    const {companies} = useContext(dataContext)
-    const [message, setMessage ] = useState("")
+const SelectCompany = ({ setPage, setCompany, selectedCompany }) => {
+    const { companies } = useContext(dataContext)
+    const [message, setMessage] = useState("")
+    const [searchString, setSearchString] = useState('')
+    const filterCompanies = companies.filter(can => can?.name?.toLowerCase().includes(searchString.toLowerCase()))
 
-    const nextClick = () =>{
-        if(selectedCompany)
+    const nextClick = () => {
+        if (selectedCompany)
             setPage(3)
         else setMessage("COMPANY IS NOT SELECTED !!!")
     }
 
     return (
         <div className="selectCompany">
-            <Search/>
+            <Search setSearchString={setSearchString} searchString={searchString} />
 
-            {companies.map((e) => <div key={e.id} className={`${selectedCompany === e.name ? "click" : ""} company`}  onClick={() => {setCompany(e?.name);setMessage("")}}>{e.name}</div>)}
-
+            {filterCompanies.map((e) => <div key={e.id} className={`${selectedCompany?.name === e.name ? "click" : ""} company`} onClick={() => { setCompany(e); setMessage("") }}>{e.name}</div>)}
 
             <div>
                 <button className="btnWizard" onClick={() => setPage(1)}>BACK</button>
