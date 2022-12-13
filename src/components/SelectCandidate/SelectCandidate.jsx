@@ -7,6 +7,8 @@ import { dataContext } from "../../context";
 const SelectCandidate = ({ setPage, selectedCandidate, setCandidate }) => {
   const { candidates } = useContext(dataContext);
   const [message, setMessage] = useState("");
+  const [searchString, setSearchString] = useState('')
+  const filterCandidates = candidates.filter(can => can?.name?.toLowerCase().includes(searchString.toLowerCase()) )
 
   const nextClick = () => {
     if (selectedCandidate) setPage(2);
@@ -17,10 +19,10 @@ const SelectCandidate = ({ setPage, selectedCandidate, setCandidate }) => {
 
   return (
     <div className="selectCandidate">
-      <Search />
+      <Search setSearchString={setSearchString} searchString={searchString} />
 
       <div>
-        {candidates.map((e) => (
+        {filterCandidates.map((e) => (
           <Candidate
             data={e}
             key={e.id}

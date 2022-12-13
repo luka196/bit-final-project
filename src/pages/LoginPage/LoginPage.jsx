@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./loginPage.scss"
 import { Link } from "react-router-dom"
 import Header from '../../components/Header/Header'
 import { useHistory } from "react-router-dom";
+import { dataContext } from "../../context";
 
 
 const LoginPage = () => {
@@ -11,12 +12,15 @@ const LoginPage = () => {
     const [pass, setPass] = useState("")
     const [refresh, setRefresh] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
+    const { setToken } = useContext(dataContext)
+    const { token } = useContext(dataContext)
     function changePage() {
-        const token = localStorage.getItem("token");
+
         if (token) {
             history.push("/reports-page")
+
         }
-    console.log(token)
+        console.log(token)
     }
     function fetchToken() {
         fetch("http://localhost:3333/login", {
@@ -32,21 +36,27 @@ const LoginPage = () => {
         })
             .then(res => res.json())
             .then(res => {
-                typeof res === "string" ? setErrorMessage(res) :  setRefresh(true) ; 
+                console.log(res, 'login')
+                typeof res === "string" ? setErrorMessage(res) : setRefresh(true);
                 if (res.accessToken) {
-                localStorage.setItem("token", res.accessToken)
+                    localStorage.setItem("token", res.accessToken);
+                    setToken(res.accessToken);
                 }
             })
             .catch(err => console.log(err))
 
-
     }
     useEffect(() => {
-        changePage()
-    }, [refresh])
+        // changePage()
+
+        if (token) {
+            history.push("/reports-page")
+
+        }
+    }, [token])
 
     return (
-       
+
         <div className="loginPage">
             <Header />
             <div className='loginModal'>

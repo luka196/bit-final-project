@@ -22,7 +22,7 @@ const Header = () => {
                 <button id="btn-login">
                 <Link to="/login-page">Log In</Link>
                 </button>
-                <button id="btn-logout">
+                <button id="btn-logout" onClick={() => {localStorage.removeItem("token")}}>
                 <Link to="/">Log Out</Link>
                 </button>
 

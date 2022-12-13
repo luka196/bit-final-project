@@ -3,9 +3,11 @@ import "./fillReport.scss";
 import { dataContext } from "../../context";
 
 const FillReport = ({ setPage, candidate, company }) => {
-  // const { token } = useContext(dataContext);
-  const token = localStorage.getItem("token");
+  const { token } = useContext(dataContext);
+  // const token = localStorage.getItem("token");
   const [submitFail, setSubmitFail] = useState("");
+  const { setUpdateReports } = useContext(dataContext);
+  const { updateReports } = useContext(dataContext);
   const newReport = {
     candidateId: candidate?.id,
     candidateName: candidate?.name,
@@ -18,7 +20,6 @@ const FillReport = ({ setPage, candidate, company }) => {
   };
   
 
-  console.log(token,newReport,candidate)
   function submitReport() {
     if (
       newReport.interviewDate !== "" &&
@@ -36,6 +37,7 @@ const FillReport = ({ setPage, candidate, company }) => {
         .then((res) => res.json())
         .then((result) => {
           console.log("Success:", result);
+          setUpdateReports(!updateReports)
         })
         .catch((error) => {
           console.error("Error:", error);
