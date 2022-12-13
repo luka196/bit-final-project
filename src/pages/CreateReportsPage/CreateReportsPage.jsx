@@ -39,7 +39,7 @@ const CreateReportsPage = () => {
           {(page === 2 || page === 3) && (
             <Info data={candidate?.name} title="Candidate:" />
           )}
-          {page === 3 && <Info data={company} title="Company:" />}
+          {page === 3 && <Info data={company.name} title="Company:" />}
         </div>
           )} 
       </div>
