@@ -1,18 +1,17 @@
 import React from 'react'
 import "./header.scss"
-
 import {Link} from "react-router-dom"
 
-
-
-
-
 const Header = () => {
+    
     return (
         <div className="header">
 
             <h1>Bit project</h1>
             <div>
+                <button id="btn-candidates">
+                <Link to="/">Candidates</Link>
+                </button>
                 <button id="btn-rep">
                 <Link to="/reports-page">Reports</Link>
                 </button>

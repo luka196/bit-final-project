@@ -13,12 +13,11 @@ const SelectCompany = ({setPage,setCompany,selectedCompany}) => {
         else setMessage("COMPANY IS NOT SELECTED !!!")
     }
 
-
     return (
         <div className="selectCompany">
             <Search/>
 
-            {companies.map((e) => <div key={e.id} className={`${selectedCompany?.name === e.name ? "click" : ""} company`}  onClick={() => {setCompany(e.name);setMessage("")}}>{e.name}</div>)}
+            {companies.map((e) => <div key={e.id} className={`${selectedCompany === e.name ? "click" : ""} company`}  onClick={() => {setCompany(e?.name);setMessage("")}}>{e.name}</div>)}
 
 
             <div>

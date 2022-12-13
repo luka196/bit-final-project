@@ -21,14 +21,12 @@ const ReportsPage = () => {
         <div className="reportsPage">
             <Header />
             <Search />
-            {reports?.map((e) => <ReportAdmin setModalData={setModalData} data={e} setIsDeleteModalOpen={setIsDeleteModalOpen} />)}
+            {reports?.map((e) => <ReportAdmin data={e} setModalData={setModalData} setIsDeleteModalOpen={setIsDeleteModalOpen} key={e.id} />)}
 
             <Modal isOpenModal={modalData} closeModal={() => setModalData(null)}>
                 <ModalDetails data={modalData} />
-                {/* <ModalDetails/> */}
             </Modal>
             <Modal isOpenModal={isDeleteModalOpen} closeModal={() => setIsDeleteModalOpen(false)}>
-                {/* <ModalDelete /> */}
                 <ModalDelete/>
             </Modal>
             <Footer />

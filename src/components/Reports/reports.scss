@@ -6,25 +6,41 @@
     background-color: $btn-color;
     border: 1px solid $color2;
 
+    .eye {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: none;
+        border-bottom: none;
+        border-right: none;
+        width: 50px;    
+        height: 40px;
+          
+      button {
+        background-color: $btn-color;
+        border: none;
+        
+        .viewBtn {
+          width: 30px;
+          background-color: $btn-color;
+          height: 20px;
+        }
+      }
+    }
+    
+
     > div {
       display: flex;
 
       div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         position: relative;
-        padding: 10px;
+        height: 40px;
         width: 34%;
         border: 1px solid $color2;
-        border-top: none;
-
-        span {
-          border-left: 2px solid red;
-          width: 40px;
-          height: 100%;
-          padding: 10px;
-          position: absolute;
-          right: 0px;
-          top: 0;
-        }
+      
       }
     }
   }
