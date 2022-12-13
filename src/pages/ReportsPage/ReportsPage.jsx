@@ -24,13 +24,12 @@ const ReportsPage = () => {
             <Search setSearchString={setSearchString} searchString={searchString} />
             {filterCandidates?.map((e) => <ReportAdmin setModalData={setModalData} data={e} setIsDeleteModalOpen={setIsDeleteModalOpen} key={e.id}/>)}
 
+
             <Modal isOpenModal={modalData} closeModal={() => setModalData(null)}>
                 <ModalDetails data={modalData} />
-                {/* <ModalDetails/> */}
             </Modal>
             <Modal isOpenModal={isDeleteModalOpen} closeModal={() => setIsDeleteModalOpen(false)}>
-                {/* <ModalDelete /> */}
-                {/* <ModalDelete/> */}
+
             </Modal>
             <Footer />
         </div>

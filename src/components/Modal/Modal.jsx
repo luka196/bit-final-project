@@ -2,6 +2,7 @@ import React from 'react';
 import './modal.scss'
 
 const Modal = ({ closeModal, isOpenModal, children }) => {
+    
     return (
         <div className={`modalWrapper ${isOpenModal ? 'modalOpen' : ''}`}>
             <div className='modalContent'>

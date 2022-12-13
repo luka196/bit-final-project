@@ -19,7 +19,7 @@ const ModalDetails = ({data}) => {
                 </div>
                 <div>
                     <p>Interview Date</p>
-                    <h2>{data.interviewDate.slice(4,16)}</h2>
+                    <h2>{data?.interviewDate?.slice(4,16)}</h2>
                 </div>
                 <div>
                     <p>Phase</p>

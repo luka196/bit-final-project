@@ -20,7 +20,7 @@ const CandidatesPage = () => {
       </div>
       {filterCandidates?.map((e) => (
         <Link key={e.id} to={`/single-candidates-page/${e.id}`}>
-          <Candidate setCandidate={() => { }} data={e} />
+          <Candidate setMessage={() => {}} setCandidate={() => {}} data={e} />
         </Link>
       ))}
       <Footer />

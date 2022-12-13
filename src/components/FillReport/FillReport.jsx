@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import "./fillReport.scss";
-import { dataContext } from "../../context";
 
 const FillReport = ({ setPage, candidate, company }) => {
   const { token } = useContext(dataContext);
@@ -18,7 +17,6 @@ const FillReport = ({ setPage, candidate, company }) => {
     status: "",
     note: "",
   };
-  
 
   function submitReport() {
     if (
@@ -51,7 +49,7 @@ const FillReport = ({ setPage, candidate, company }) => {
     <div className="fillReport">
       <div>
         <div>
-          <p>Interview Date:</p>
+          <p>Date:</p>
 
           <input
             type="date"
@@ -111,6 +109,8 @@ const FillReport = ({ setPage, candidate, company }) => {
             className="btnWizard"
             onClick={() => {
               submitReport();
+             
+    
               console.log(token);
             }}
             >

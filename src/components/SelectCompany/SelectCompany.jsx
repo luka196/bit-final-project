@@ -15,13 +15,11 @@ const SelectCompany = ({ setPage, setCompany, selectedCompany }) => {
         else setMessage("COMPANY IS NOT SELECTED !!!")
     }
 
-
     return (
         <div className="selectCompany">
             <Search setSearchString={setSearchString} searchString={searchString} />
 
             {filterCompanies.map((e) => <div key={e.id} className={`${selectedCompany?.name === e.name ? "click" : ""} company`} onClick={() => { setCompany(e); setMessage("") }}>{e.name}</div>)}
-
 
             <div>
                 <button className="btnWizard" onClick={() => setPage(1)}>BACK</button>

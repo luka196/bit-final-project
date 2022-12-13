@@ -19,28 +19,39 @@
   #btn-logout {
     display: none;
   }
+  #btn-crrep {
+    display: none;
+  }
+  // #btn-rep {
+  //   display: none;
+  // }
 
   .loginModal{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 450px;
-    height: 500px;
+    width: 550px;
     font-size: 25px;
     @include card-design;
     border-radius: 20px;
-   
+    min-height: 60vh;
+
+    
 
     h1{
       margin-bottom: 50px;
     }
 
-    div{
+    >div{
+      display: flex;
+      justify-content: space-between;
       margin-bottom: 30px;
+      >span{
+        width: 130px;
+      }
 
       input{
-        padding: 6px;
         border-radius: 8px;
       }
 
@@ -48,6 +59,7 @@
 
     p{
       color: red;
+      min-height: 5vh;
     }
     button{
       margin-top: 25px;
@@ -61,6 +73,32 @@
         background-color: #3f6179;
         color: $color2;
         border: 2px solid $color2;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .loginModal {
+      width: 450px;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    .loginModal {
+      width: 350px;
+
+      p {
+        font-size: 16px;
+      }
+
+
+      >div {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      button {
+        margin-bottom: 10px;
       }
     }
   }

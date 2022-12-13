@@ -5,7 +5,6 @@ import Header from '../../components/Header/Header'
 import { useHistory } from "react-router-dom";
 import { dataContext } from "../../context";
 
-
 const LoginPage = () => {
     const history = useHistory();
     const [mail, setMail] = useState("")
@@ -14,14 +13,13 @@ const LoginPage = () => {
     const [errorMessage, setErrorMessage] = useState("")
     const { setToken } = useContext(dataContext)
     const { token } = useContext(dataContext)
-    function changePage() {
-
-        if (token) {
-            history.push("/reports-page")
-
-        }
-        console.log(token)
+    
+      const handleKeypress = (e) => {
+    if (e.keyCode === 13) {
+        fetchToken()
     }
+  };
+    
     function fetchToken() {
         fetch("http://localhost:3333/login", {
             "method": "POST",
@@ -32,7 +30,6 @@ const LoginPage = () => {
                 "email": mail,
                 "password": pass
             })
-
         })
             .then(res => res.json())
             .then(res => {
@@ -44,24 +41,22 @@ const LoginPage = () => {
                 }
             })
             .catch(err => console.log(err))
-
-    }
+    }   
+    
     useEffect(() => {
-        // changePage()
-
         if (token) {
             history.push("/reports-page")
-
         }
     }, [token])
 
     return (
-
         <div className="loginPage">
             <Header />
-            <div className='loginModal'>
-                <h1>Log In</h1>
-                <div>Username:
+            <div className='loginModal'
+            onKeyDown={ handleKeypress}
+            >
+                <h1>Welcome!</h1>
+                <div><span>Username:</span>
                     <input onChange={e => setMail(e.target.value)} type="username" />
                 </div>
                 <div>Password:
@@ -73,8 +68,24 @@ const LoginPage = () => {
                 </button>
             </div>
         </div>
+        <div>
+          <span>Password:</span>
+          <input
+            onChange={(e) => setPass(e.target.value)}
+            type="password"
+          />
+        </div>
+        <p>{errorMessage}</p>
+        <button
+          onClick={() => {
+            fetchToken();
+          }}
+        >
+          Log In
+        </button>
+      </div>
+    </div>
+  );
+};
 
-    )
-}
-
-export default LoginPage
+export default LoginPage;
