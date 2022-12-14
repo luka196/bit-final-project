@@ -77,7 +77,14 @@ const LoginPage = () => {
         <span>Password:</span>
         <input onChange={(e) => setPass(e.target.value)} type="password" />
       </div>
+
+      <div>
+        <span>Password:</span>
+        <input onChange={(e) => setPass(e.target.value)} type="password" />
+      </div>
+
       <p>{errorMessage}</p>
+
       <button
         onClick={() => {
           fetchToken();

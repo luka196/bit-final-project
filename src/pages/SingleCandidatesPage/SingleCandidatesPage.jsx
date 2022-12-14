@@ -70,7 +70,6 @@ const SingleCandidatesPage = () => {
         <Reports
           data={e}
           setModalData={setModalData}
-          // setIsDeleteModalOpen={setIsDeleteModalOpen}
           key={e.id}
         />
       ))}
