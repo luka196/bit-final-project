@@ -1,35 +1,74 @@
+import React, { useContext, useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+
 import { dataContext } from "../../context";
-import React, { useContext } from "react";
 
 export const ModalDelete = ({ id }) => {
   const { updateReports, setUpdateReports, token } = useContext(dataContext);
-  // const token = localStorage.getItem("token");
+  const history = useHistory();
   const MySwal = withReactContent(Swal);
+  const [redirectLogin, setRedirectLogin] = useState(false);
+
+  useEffect(() => {
+    if (redirectLogin) {
+      history.push("/login-page");
+    }
+  }, [redirectLogin, history]);
+
   function deleteReport(id) {
     fetch(`http://localhost:3333/664/api/reports/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token}1`,
       },
       body: JSON.stringify(deleteReport),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        // res.json()
+        // console.log(res);
+        if (!res.ok) {
+          res
+            .json()
+            .then((error) => {
+              console.log(error, "ERROR");
+              throw new Error(error);
+            })
+            .catch((error) => {
+              MySwal.fire("Error!", error.message, "error").then((result) => {
+                if (
+                  result.isConfirmed &&
+                  error.message.toLowerCase() === "jwt expired"
+                ) {
+                  setRedirectLogin(true);
+                }
+              });
+            });
+        }
+
+        return res.json();
+      })
       .then((result) => {
-        console.log(
-          "Success:",
-          result,
-          `http://localhost:3333/664/api/reports/${id}`,
-          token
-        );
+        console.log(result);
+
+        MySwal.fire("Deleted!", "Your file has been deleted.", "success");
+
         setUpdateReports(!updateReports);
       })
       .catch((error) => {
-        console.error("Error:", error);
+        MySwal.fire("Error!", error.message, "error").then((result) => {
+          if (
+            result.isConfirmed &&
+            error.message.toLowerCase() === "jwt expired"
+          ) {
+            setRedirectLogin(true);
+          }
+        });
       });
   }
+
   const openModal = () => {
     MySwal.fire({
       title: "Are you sure?",
@@ -40,13 +79,12 @@ export const ModalDelete = ({ id }) => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
-      console.log(result, "delete modal");
       if (result.isConfirmed) {
         deleteReport(id);
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
       }
     });
   };
+
   return (
     <button onClick={openModal}>
       <svg

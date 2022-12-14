@@ -9,21 +9,24 @@ import { dataContext } from "../../context";
 import "./reportsPage.scss";
 import ModalDetails from "../../components/ModalDetails/ModalDetails";
 // import ModalDelete from '../../components/ModalDelete/ModalDelete'
-
 const ReportsPage = () => {
   const { reports } = useContext(dataContext);
   const [modalData, setModalData] = useState(null);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
+  const location = useLocation();
   const [searchString, setSearchString] = useState("");
   const filterCandidates = reports.filter((can) =>
     can?.candidateName?.toLowerCase().includes(searchString.toLowerCase())
   );
+
+  console.log(location.state);
+  
   return (
     <div className="reportsPage">
       <Header />
       <Search setSearchString={setSearchString} searchString={searchString} />
-      {filterCandidates?.map((e) => (
+      {filterCandidates?.reverse()?.map((e) => (
         <ReportAdmin
           setModalData={setModalData}
           data={e}

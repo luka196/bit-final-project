@@ -1,40 +1,46 @@
 import React, { useContext } from "react";
 import "./header.scss";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { dataContext } from "../../context";
 
 const Header = () => {
   const { token, setToken } = useContext(dataContext);
+  const history = useHistory();
+
+  const logOut = () => {
+    // setToken("");
+    history.push("/");
+  };
 
   return (
     <div className="header">
       <h1>Bit project</h1>
       <div>
-        <button id="btn-candidates">
-          <Link to="/">Candidates</Link>
-        </button>
-        {token && (
-          <button id="btn-rep">
-            <Link to="/reports-page">Reports</Link>
-          </button>
-        )}
-        {token && (
-          <button id="btn-crrep">
-            <Link to="/create-reports-page">Create Report</Link>
-          </button>
-        )}
-        {!token && (
-          <button id="btn-login">
-            <Link to="/login-page">Log In</Link>
-          </button>
-        )}
-        {token && (
-          <button id="btn-logout">
-            {/* NE BRISASTI!!! RED IZNAD I RED ISPOD SE TOGLUJU KAD HOCEMO DA ISKLJUCIMO FUNKCIONALNOST LOG OUTA!!! */}
-            {/* {token && <button id="btn-logout" onClick={() => {setToken("")}}> */}
+        <Link id="btn-candidates" className="headerNavItem" to="/">
+          Candidates
+        </Link>
 
-            <Link to="/">Log Out</Link>
-          </button>
+        {token ? (
+          <>
+            <Link className="headerNavItem" id="btn-rep" to="/reports-page">
+              Reports
+            </Link>
+
+            <Link
+              id="btn-crrep"
+              className="headerNavItem"
+              to="/create-reports-page"
+            >
+              Create Report
+            </Link>
+            <button className="headerNavItem" id="btn-logout" onClick={logOut}>
+              Log out
+            </button>
+          </>
+        ) : (
+          <Link className="headerNavItem" id="btn-login" to="/login-page">
+            Log In
+          </Link>
         )}
       </div>
     </div>

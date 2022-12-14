@@ -6,9 +6,9 @@ $btn-color: #7395ae;
   -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
-  border: 2px solid $color2;
+  // border: 2px solid $color2;
   background-color: $color1;
-  border-radius: 10px;
+  // border-radius: 10px;
 }
 
 @mixin big-text-size {

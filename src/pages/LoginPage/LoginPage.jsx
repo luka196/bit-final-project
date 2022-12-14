@@ -9,11 +9,10 @@ const LoginPage = () => {
   const history = useHistory();
   const [mail, setMail] = useState("");
   const [pass, setPass] = useState("");
-  const [refresh, setRefresh] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const { setToken } = useContext(dataContext);
   const { token } = useContext(dataContext);
-
+  
   const handleKeypress = (e) => {
     if (e.keyCode === 13) {
       fetchToken();
@@ -31,16 +30,20 @@ const LoginPage = () => {
         password: pass,
       }),
     })
-      .then((res) => res.json())
       .then((res) => {
-        console.log(res, "login");
-        typeof res === "string" ? setErrorMessage(res) : setRefresh(true);
+        if (!res.ok) {
+          throw new Error("User not found");
+        } else {
+          return res.json();
+        }
+      })
+      .then((res) => {
         if (res.accessToken) {
           localStorage.setItem("token", res.accessToken);
           setToken(res.accessToken);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => setErrorMessage(err?.message));
   }
 
   useEffect(() => {

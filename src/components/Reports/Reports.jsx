@@ -1,7 +1,7 @@
 import React from "react";
 import "./reports.scss";
 
-const Reports = ({ data, setIsDeleteModalOpen, setModalData }) => {
+const Reports = ({ data, setModalData }) => {
   return (
     <div className="reports">
       <div>
@@ -12,7 +12,6 @@ const Reports = ({ data, setIsDeleteModalOpen, setModalData }) => {
           <div className="eye">
             <button
               onClick={() => {
-                setIsDeleteModalOpen(true);
                 setModalData(data);
               }}
             >

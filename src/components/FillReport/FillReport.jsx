@@ -1,28 +1,53 @@
 import React, { useState, useContext } from "react";
 import { dataContext } from "../../context";
 import "./fillReport.scss";
-
-const FillReport = ({ setPage, candidate, company }) => {
-  const { token } = useContext(dataContext);
+import { useHistory } from "react-router-dom";
+const FillReport = ({
+  setPage,
+  candidate,
+  company,
+  filterReportsByCandidateAndCompany,
+}) => {
+  const history = useHistory();
+  const { token, reports } = useContext(dataContext);
   // const token = localStorage.getItem("token");
   const [submitFail, setSubmitFail] = useState("");
   const { setUpdateReports } = useContext(dataContext);
   const { updateReports } = useContext(dataContext);
+  const array = filterReportsByCandidateAndCompany(reports, candidate, company);
+  const phase = (() => {
+    let phase;
+    if (array.length === 0) {
+      phase = "cv";
+    } else if (array.find((e) => (e.phase === "tech"))) {
+      phase = "final";
+    } else if (array.find((e) => (e.phase === "hr"))) {
+      phase = "tech";
+    } else if (array.find((e) => (e.phase === "cv"))) {
+      phase = "hr";
+    }
+    return phase;
+  })(array);
+
+  // const phases = ["cv", "hr", "tech", "final"];
+  // const phase = phases[array.length];
+
   const newReport = {
     candidateId: candidate?.id,
     candidateName: candidate?.name,
     companyId: company?.id,
     companyName: company?.name,
     interviewDate: "",
-    phase: "",
+    phase,
     status: "",
     note: "",
   };
 
+  console.log(3);
   function submitReport() {
     if (
       newReport.interviewDate !== "" &&
-      newReport.phase !== "" &&
+      // newReport.phase !== "" &&
       newReport.status !== ""
     ) {
       fetch("http://localhost:3333/664/api/reports", {
@@ -37,6 +62,7 @@ const FillReport = ({ setPage, candidate, company }) => {
         .then((result) => {
           console.log("Success:", result);
           setUpdateReports(!updateReports);
+          history.push("/reports-page", { createdReport: true });
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -64,21 +90,7 @@ const FillReport = ({ setPage, candidate, company }) => {
         <div>
           <label>Phase:</label>
 
-          <select
-            name="phase"
-            id="phase"
-            onChange={(e) => (newReport.phase = e.target.value)}
-            defaultValue="-select-"
-          >
-            <option value="-select-" disabled>
-              -select-
-            </option>
-
-            <option value="cv">CV</option>
-            <option value="hr">HR</option>
-            <option value="technical">Technical</option>
-            <option value="final">Final</option>
-          </select>
+          <p className="inputPhase">{phase}</p>
         </div>
         <div>
           <label>Status:</label>

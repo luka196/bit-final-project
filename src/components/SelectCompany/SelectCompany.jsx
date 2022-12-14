@@ -3,8 +3,8 @@ import Search from "../Search/Search";
 import "./selectCompany.scss";
 import { dataContext } from "../../context";
 
-const SelectCompany = ({ setPage, setCompany, selectedCompany }) => {
-  const { companies } = useContext(dataContext);
+const SelectCompany = ({ setPage, setCompany, selectedCompany, candidate,filterReportsByCandidateAndCompany }) => {
+  const { companies, reports } = useContext(dataContext);
   const [message, setMessage] = useState("");
   const [searchString, setSearchString] = useState("");
   const filterCompanies = companies.filter((can) =>
@@ -21,6 +21,9 @@ const SelectCompany = ({ setPage, setCompany, selectedCompany }) => {
       <Search setSearchString={setSearchString} searchString={searchString} />
 
       {filterCompanies.map((e) => (
+        !(filterReportsByCandidateAndCompany(reports,candidate,e).find((r)=>(
+          r?.phase==='final' || r?.status==='declined'
+        ))) && 
         <div
           key={e.id}
           className={`${

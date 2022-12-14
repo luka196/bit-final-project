@@ -12,6 +12,15 @@ const CreateReportsPage = () => {
   const [candidate, setCandidate] = useState(null);
   const [company, setCompany] = useState(null);
 
+  function filterReportsByCandidateAndCompany (reports,candidate,company) {
+    return reports?.filter((r) => (
+      r?.candidateId===candidate?.id
+    )).filter((p)=>(
+      p?.companyId===company?.id
+    ))
+    
+   }
+
   return (
     <div className="createReportsPage">
       <Header />
@@ -32,7 +41,7 @@ const CreateReportsPage = () => {
             {(page === 2 || page === 3) && (
               <Info data={candidate?.name} title="Candidate:" />
             )}
-            {page === 3 && <Info data={company.name} title="Company:" />}
+            {page === 3 && <Info data={company?.name} title="Company:" />}
           </div>
         )}
       </div>
@@ -48,10 +57,12 @@ const CreateReportsPage = () => {
           setPage={setPage}
           selectedCompany={company}
           setCompany={setCompany}
+          candidate={candidate}
+          filterReportsByCandidateAndCompany={filterReportsByCandidateAndCompany}
         />
       )}
       {page === 3 && (
-        <FillReport setPage={setPage} candidate={candidate} company={company} />
+        <FillReport setPage={setPage} candidate={candidate} company={company} filterReportsByCandidateAndCompany={filterReportsByCandidateAndCompany}/>
       )}
 
       <Footer />

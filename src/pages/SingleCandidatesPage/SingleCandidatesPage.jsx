@@ -13,18 +13,14 @@ const SingleCandidatesPage = () => {
   const { candidates } = useContext(dataContext);
   const { reports } = useContext(dataContext);
   const [modalData, setModalData] = useState(null);
-  const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
+
   const match = useRouteMatch();
+
   const singleCandidate = candidates?.find((e) => e.id == match.params.id);
+
   const singleCandidateReports = reports?.filter(
     (e) => e.candidateId == match.params.id
   );
-  // console.log(singleCandidate);
-  // console.log(singleCandidateReports);
-
-  // const handleModalData = x => {
-  //     console.log(x)
-  // };
 
   if (!singleCandidate) {
     return null;
@@ -33,7 +29,7 @@ const SingleCandidatesPage = () => {
   return (
     <div className="singleCandidatesPage">
       <Header />
-      <img src={singleCandidate?.avatar} alt="Image unavailable" />
+      <img src={singleCandidate?.avatar} alt="unavailable" />
       <div className="info-div">
         <Info data={singleCandidate?.name} title="Name:" />
         <Info
@@ -54,25 +50,12 @@ const SingleCandidatesPage = () => {
       {singleCandidateReports?.map((e) => (
         <Reports
           key={e.id}
-          openDetailsModal={setIsDetailsModalOpen}
+          // openDetailsModal={setIsDetailsModalOpen}
           setModalData={setModalData}
           data={e}
         />
       ))}
-      {isDetailsModalOpen && (
-        <ModalDetails
-          data={modalData}
-          closeDetailsModal={setIsDetailsModalOpen}
-        />
-      )}
 
-      {singleCandidateReports?.map((e) => (
-        <Reports
-          data={e}
-          setModalData={setModalData}
-          key={e.id}
-        />
-      ))}
       <Modal isOpenModal={modalData} closeModal={() => setModalData(null)}>
         <ModalDetails data={modalData} />
       </Modal>
