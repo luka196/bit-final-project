@@ -7,15 +7,17 @@ import { dataContext } from "../../context";
 const SelectCandidate = ({ setPage, selectedCandidate, setCandidate }) => {
   const { candidates } = useContext(dataContext);
   const [message, setMessage] = useState("");
-  const [searchString, setSearchString] = useState('')
-  const filterCandidates = candidates.filter(can => can?.name?.toLowerCase().includes(searchString.toLowerCase()) )
+  const [searchString, setSearchString] = useState("");
+  const filterCandidates = candidates.filter((can) =>
+    can?.name?.toLowerCase().includes(searchString.toLowerCase())
+  );
 
   const nextClick = () => {
     if (selectedCandidate) setPage(2);
     else {
       setMessage("CANDIDATE IS NOT SELECTED !!!");
     }
-  }
+  };
 
   return (
     <div className="selectCandidate">

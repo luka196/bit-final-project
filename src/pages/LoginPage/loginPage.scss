@@ -1,6 +1,5 @@
 @import "../../constans/variables.scss";
 
-
 .loginPage {
   display: flex;
   flex-wrap: wrap;
@@ -26,7 +25,7 @@
   //   display: none;
   // }
 
-  .loginModal{
+  .loginModal {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,31 +36,28 @@
     border-radius: 20px;
     min-height: 60vh;
 
-    
-
-    h1{
+    h1 {
       margin-bottom: 50px;
     }
 
-    >div{
+    > div {
       display: flex;
       justify-content: space-between;
       margin-bottom: 30px;
-      >span{
+      > span {
         width: 130px;
       }
 
-      input{
+      input {
         border-radius: 8px;
       }
-
     }
 
-    p{
+    p {
       color: red;
       min-height: 5vh;
     }
-    button{
+    button {
       margin-top: 25px;
       padding: 10px 20px;
       border-radius: 10px;
@@ -69,7 +65,7 @@
       letter-spacing: 1px;
       font-size: 18px;
 
-      &:hover{
+      &:hover {
         background-color: #3f6179;
         color: $color2;
         border: 2px solid $color2;
@@ -91,8 +87,7 @@
         font-size: 16px;
       }
 
-
-      >div {
+      > div {
         flex-direction: column;
         align-items: center;
       }
@@ -102,5 +97,4 @@
       }
     }
   }
-
 }

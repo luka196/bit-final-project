@@ -11,7 +11,7 @@
     display: none;
   }
 
-  #btn-crrep{
+  #btn-crrep {
     background-color: #3f6179;
   }
 
@@ -20,41 +20,38 @@
     border-right: 1px solid black;
     padding: 0 5px;
 
-
-    >div {
+    > div {
       cursor: default;
       @include card-design;
       border-radius: 5px;
       margin-bottom: 10px;
 
-
       p {
         display: flex;
         font-size: 30px;
         margin: 5px 10px;
-        
       }
     }
-    .report-pick{
-      p{
+    .report-pick {
+      p {
         @include small-text-size;
       }
-      
-      h2{
+
+      h2 {
         @include big-text-size;
       }
     }
 
-    .activeNav{
+    .activeNav {
       background-color: $color3;
     }
 
-    .activeNav>p{
-        font-weight: 900;
-       
-        >div {
-          border: 2px solid $color2;
-        }
+    .activeNav > p {
+      font-weight: 900;
+
+      > div {
+        border: 2px solid $color2;
+      }
     }
 
     .last-report {
@@ -64,10 +61,10 @@
       width: 100%;
     }
   }
-  .btnWizard{
-        width: 100px;
-        height: 40px;
-        border-radius: 10px;
+  .btnWizard {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
   }
 }
 .selectCandidate,
@@ -83,7 +80,7 @@
 
       div {
         box-shadow: none;
-        
+
         p {
           flex-direction: column;
           font-size: 20px;
@@ -99,40 +96,37 @@
 }
 
 @media screen and (max-width: 425px) {
-    .createReportsPage {
-      > div:nth-child(2) {
-        width: 100%;
+  .createReportsPage {
+    > div:nth-child(2) {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      > .report-pick {
         display: flex;
-        flex-wrap: wrap;
-
-        >.report-pick{
-          display: flex;
-          width: 100%;
-          justify-content: space-around;
-        }
-        
-        div {
-          width: 33%;
-          p {
-            flex-direction: column;
-            font-size: 20px;
-          }
-        }
-
-        .last-report {
-          display: none;
-          border-top: none;
-          margin: 0;
-          width: 50%;
-        }
-      }
-      .selectCandidate,
-      .selectCompany,
-      .fillReport {
         width: 100%;
+        justify-content: space-around;
       }
 
-      
+      div {
+        width: 33%;
+        p {
+          flex-direction: column;
+          font-size: 20px;
+        }
+      }
+
+      .last-report {
+        display: none;
+        border-top: none;
+        margin: 0;
+        width: 50%;
+      }
     }
-    
+    .selectCandidate,
+    .selectCompany,
+    .fillReport {
+      width: 100%;
+    }
   }
+}

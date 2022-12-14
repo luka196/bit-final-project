@@ -1,13 +1,8 @@
-import React from 'react'
-import "./reportItem.scss"
+import React from "react";
+import "./reportItem.scss";
 
 const ReportItem = () => {
-    
-    return (
-        <div className="reportItem">
-            ReportItem
-        </div>
-    )
-}
+  return <div className="reportItem">ReportItem</div>;
+};
 
-export default ReportItem
+export default ReportItem;

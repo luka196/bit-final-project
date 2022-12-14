@@ -2,7 +2,6 @@ import React from "react";
 import "./reports.scss";
 
 const Reports = ({ data, setIsDeleteModalOpen, setModalData }) => {
-  
   return (
     <div className="reports">
       <div>
@@ -11,18 +10,18 @@ const Reports = ({ data, setIsDeleteModalOpen, setModalData }) => {
         <div>
           {data.status}{" "}
           <div className="eye">
-              <button
-                onClick={() => {
-                  setIsDeleteModalOpen(true);
-                  setModalData(data);
-                }}
-              >
-                <img
-                  className="viewBtn"
-                  src="https://cdn.pixabay.com/photo/2016/12/18/11/04/eye-1915455_1280.png"
-                  alt=""
-                />
-              </button>
+            <button
+              onClick={() => {
+                setIsDeleteModalOpen(true);
+                setModalData(data);
+              }}
+            >
+              <img
+                className="viewBtn"
+                src="https://cdn.pixabay.com/photo/2016/12/18/11/04/eye-1915455_1280.png"
+                alt=""
+              />
+            </button>
           </div>
         </div>
       </div>

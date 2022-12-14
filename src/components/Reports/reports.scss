@@ -7,19 +7,19 @@
     border: 1px solid $color2;
 
     .eye {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-top: none;
-        border-bottom: none;
-        border-right: none;
-        width: 50px;    
-        height: 40px;
-          
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: none;
+      border-bottom: none;
+      border-right: none;
+      width: 50px;
+      height: 40px;
+
       button {
         background-color: $btn-color;
         border: none;
-        
+
         .viewBtn {
           width: 30px;
           background-color: $btn-color;
@@ -27,7 +27,6 @@
         }
       }
     }
-    
 
     > div {
       display: flex;
@@ -40,7 +39,6 @@
         height: 40px;
         width: 34%;
         border: 1px solid $color2;
-      
       }
     }
   }

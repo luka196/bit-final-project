@@ -1,16 +1,14 @@
-import React from 'react'
-import "./info.scss"
-const Info = ({data,title}) => {
-   
-    return (
-        <div className="info">
-           <div>
-                <p>{title}</p>
-               <h2>{data}</h2>
+import React from "react";
+import "./info.scss";
+const Info = ({ data, title }) => {
+  return (
+    <div className="info">
+      <div>
+        <p>{title}</p>
+        <h2>{data}</h2>
+      </div>
+    </div>
+  );
+};
 
-           </div>
-        </div>
-    )
-}
-
-export default Info
+export default Info;

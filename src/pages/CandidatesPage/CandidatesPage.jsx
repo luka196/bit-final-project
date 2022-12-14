@@ -1,4 +1,4 @@
-import React, { useContext , useEffect, useState} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Candidate from "../../components/Candidate/Candidate";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
@@ -8,9 +8,11 @@ import { dataContext } from "../../context";
 import { Link } from "react-router-dom";
 
 const CandidatesPage = () => {
-  const [searchString, setSearchString] = useState('')
+  const [searchString, setSearchString] = useState("");
   const { candidates } = useContext(dataContext);
-  const filterCandidates = candidates.filter(can => can?.name?.toLowerCase().includes(searchString.toLowerCase()) )
+  const filterCandidates = candidates.filter((can) =>
+    can?.name?.toLowerCase().includes(searchString.toLowerCase())
+  );
   return (
     <div className="candidatesPage">
       <Header />

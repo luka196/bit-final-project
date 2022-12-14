@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { dataContext } from "../../context";
 import "./fillReport.scss";
 
 const FillReport = ({ setPage, candidate, company }) => {
@@ -35,7 +36,7 @@ const FillReport = ({ setPage, candidate, company }) => {
         .then((res) => res.json())
         .then((result) => {
           console.log("Success:", result);
-          setUpdateReports(!updateReports)
+          setUpdateReports(!updateReports);
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -53,7 +54,10 @@ const FillReport = ({ setPage, candidate, company }) => {
 
           <input
             type="date"
-            onChange={(e) => {let date = new Date(e.target.value) ; date = date.toString() ; newReport.interviewDate = date
+            onChange={(e) => {
+              let date = new Date(e.target.value);
+              date = date.toString();
+              newReport.interviewDate = date;
             }}
           />
         </div>
@@ -66,7 +70,7 @@ const FillReport = ({ setPage, candidate, company }) => {
             onChange={(e) => (newReport.phase = e.target.value)}
             defaultValue="-select-"
           >
-            <option value="-select-" disabled >
+            <option value="-select-" disabled>
               -select-
             </option>
 
@@ -85,7 +89,7 @@ const FillReport = ({ setPage, candidate, company }) => {
             defaultValue="-select-"
             onChange={(e) => (newReport.status = e.target.value)}
           >
-            <option value="-select-" disabled >
+            <option value="-select-" disabled>
               -select-
             </option>
             <option value="passed">Passed</option>
@@ -104,19 +108,18 @@ const FillReport = ({ setPage, candidate, company }) => {
         <button className="btnWizard" onClick={() => setPage(2)}>
           BACK
         </button>
-        <div >
+        <div>
           <button
             className="btnWizard"
             onClick={() => {
               submitReport();
-             
-    
+
               console.log(token);
             }}
-            >
+          >
             SUBMIT
           </button>
-            <p className="msg">{submitFail}</p>
+          <p className="msg">{submitFail}</p>
         </div>
       </div>
     </div>
