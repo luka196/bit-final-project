@@ -28,7 +28,7 @@ const FillReport = ({
     }
     return phase;
   })(array);
-
+  console.log(phase,array)
   // const phases = ["cv", "hr", "tech", "final"];
   // const phase = phases[array.length];
 

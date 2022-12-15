@@ -20,6 +20,7 @@
       word-break: break-word;
 
       > h2 {
+        color: $color2;
         @include big-text-size;
         padding: 15px;
       }
