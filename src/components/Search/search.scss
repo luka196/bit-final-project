@@ -1,12 +1,17 @@
 @import "../../constans/variables.scss";
+.searchWrapper{
+// position: fixed;
+width: 100%;
+display: flex;
+justify-content: center;
+  .search {
+    position: relative;
+    --size-button: 40px;
+    
+  }
 
-.search {
-  position: relative;
-  --size-button: 40px;
-}
-
-.input1 {
-  padding-left: var(--size-button);
+  .input1 {
+    padding-left: var(--size-button);
   height: var(--size-button);
   font-size: 15px;
   border: none;
@@ -31,7 +36,7 @@
   pointer-events: all;
   cursor: pointer;
 }
-  // width: 100%;
+// width: 100%;
   // padding: 0 40px;
   // position: fixed;
   // top: 70px;
@@ -43,13 +48,13 @@
   //   height: 25px;
   // }
   // input {
-  //   padding: 7px;
-  //   margin-left: 5px;
-  //   border-radius: 10px;
-  //   width: 250px;
+    //   padding: 7px;
+    //   margin-left: 5px;
+    //   border-radius: 10px;
+    //   width: 250px;
   // }
-
-.search .icon {
+  
+  .search .icon {
   position: absolute;
   width: var(--size-button);
   height: var(--size-button);
@@ -68,4 +73,5 @@
   color: $color2;
   width: 50px;
   height: 50px;
+}
 }

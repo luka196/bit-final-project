@@ -8,7 +8,7 @@ const Header = () => {
   const history = useHistory();
 
   const logOut = () => {
-    // setToken("");
+    setToken("");
     history.push("/candidates");
   };
 

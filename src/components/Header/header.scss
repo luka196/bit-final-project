@@ -7,7 +7,7 @@
 
 }
 .reportsPage, .createReportsPage{
-  padding: 140px 0;
+  padding: 120px 0;
   .interviewsReports{display: none};
   .logInTitle{display: none};
 }
@@ -20,13 +20,14 @@
 .header {
   position: fixed;
   top: 0;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: $color1;
   padding: 0 30px;
 
-  width: 100%;
+  width: 100vw;
   border-bottom: 2px solid $color2;
 
   h1 {
@@ -48,11 +49,8 @@
 }
 @media screen and (max-width: 1100px) {
   .candidatesPage, .singleCandidatesPage, .reportsPage, .createReportsPage{
-    padding: 140px 0;
-    .search{
-      top: 80px;
-
-    }
+    padding: 120px 0;
+ 
   }
   .header>div{
     .headerNavItem{
@@ -62,11 +60,11 @@
 }
 @media screen and (max-width: 768px) {
   .candidatesPage, .singleCandidatesPage, .reportsPage, .createReportsPage{
-    padding: 180px 0;
-    .search{
-      top: 120px;
-
+    padding: 120px 0;
+    .header{
+      height: 110px;
     }
+
   }
   .createReportsPage{
     padding: 120px 0;

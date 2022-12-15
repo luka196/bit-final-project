@@ -1,66 +1,5 @@
 @import "../../constans/variables.scss";
 
-.candidatesPage {
-  .candidate {
-    width: 95%;
-    &:hover {
-      background-color: $color3;
-    }
-  }
-}
-
-.candidate {
-  display: flex;
-  align-items: center;
-  width: 49%;
-  // border: 1px solid black;
-  margin: 10px 0;
-  cursor: pointer;
-
-  div {
-    width: 100%;
-    word-break: break-all;
-  }
-
-  &:hover {
-    background-color: $color3;
-    transition: background-color 0.1s ease-out 10ms;
-  }
-
-  > img {
-    height: 140px;
-    padding: 5px;
-    font-size: 15px;
-  }
-  h2 {
-    @include big-text-size;
-  }
-  p {
-    @include small-text-size;
-  }
-
-  @include card-design;
-}
-
-.click {
-  background-color: $color3;
-}
-
-@media screen and (max-width: 768px) {
-  .candidate {
-    width: 100%;
-    margin: 0 0 5px 20px;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .candidate {
-    width: 100%;
-    margin-left: 20px;
-  }
-}
-
-
 .card2 {
   // width: 330px;
   height: 400px;
@@ -69,26 +8,28 @@
   text-align: center;
   color: #f0f0f0;
   font-family: inherit;
-  z-index: 1;
+  // z-index: 1;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   margin: 20px;
+
 }
 
 .img {
-  display: flex;
-  margin: 60px auto 10px auto;
-  width: 200px;
-  height: 200px;
+  margin: 40px auto 40px auto;
+  // width: 90%;
+  height: 70%;
   border: 1px solid #f0f0f0;
   border-radius: 50%;
   font-size: 11px;
-  justify-content: center;
-  align-items: center;
   transition: all 0.5s;
-  z-index: 99;
   background-color: #152f50;
+  overflow: hidden;
+
+  .cand-img {
+    width: 100%;
+  }
 }
 
 .email {
@@ -117,3 +58,24 @@ svg {
 .card2:hover p {
   opacity: 1;
 }
+
+.click {
+  background-color: $color3;
+}
+
+@media screen and (max-width: 768px) {
+  .candidate {
+    width: 100%;
+    margin: 0 0 5px 20px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .candidate {
+    width: 100%;
+    margin-left: 20px;
+  }
+}
+
+
+
