@@ -1,6 +1,10 @@
 .search {
   width: 100%;
-  padding: 30px;
+  padding: 0 40px;
+  position: fixed;
+  top: 70px;
+  // right: 40px;
+
 
   .picture {
     width: 25px;
@@ -10,7 +14,7 @@
     padding: 7px;
     margin-left: 5px;
     border-radius: 10px;
-    width: 300px;
+    width: 250px;
   }
 
   div {

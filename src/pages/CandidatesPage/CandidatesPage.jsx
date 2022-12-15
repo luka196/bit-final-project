@@ -17,7 +17,7 @@ const CandidatesPage = () => {
     <div className="candidatesPage">
       <Header />
       <div id="candidate">
-        <h2>Candidates:</h2>
+        {/* <h2>Candidates:</h2> */}
         <Search setSearchString={setSearchString} searchString={searchString} />
       </div>
       {filterCandidates?.map((e) => (

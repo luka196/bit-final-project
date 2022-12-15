@@ -71,7 +71,7 @@ const FillReport = ({
       setSubmitFail("Please select all fields");
     }
   }
-
+ 
   return (
     <div className="fillReport">
       <div>
@@ -85,6 +85,7 @@ const FillReport = ({
               date = date.toString();
               newReport.interviewDate = date;
             }}
+            max={new Date().toISOString().split("T")[0]}
           />
         </div>
         <div>

@@ -41,9 +41,6 @@ function App() {
     <DataProvider value={{ candidates, reports, companies, users, token, setToken, updateReports, setUpdateReports }}>
       <div className="app">
         <Switch>
-          <Route exact path="/">
-            <CandidatesPage />
-          </Route>
           <Route exact path="/candidates">
             <CandidatesPage />
           </Route>
