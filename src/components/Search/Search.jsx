@@ -6,23 +6,7 @@ const Search = ({ searchString, setSearchString }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    // <div className="search">
-    //   <div>
-    //     <img
-    //       className="picture"
-    //       src="https://cdn-icons-png.flaticon.com/512/54/54481.png"
-    //       alt="img"
-    //     />
-    //     <input
-    //       type="search"
-    //       placeholder="Search"
-    //       value={searchString}
-    //       onChange={(e) => {
-    //         setSearchString(e.target.value);
-    //       }}
-    //     />
-    //   </div>
-    // </div>
+ 
     <div className="search">
     <input placeholder="Type to search..." required="" className={isActive ? 'input1 showInput' : "input1"}  name="text" type="text" value={searchString}
           onChange={(e) => {

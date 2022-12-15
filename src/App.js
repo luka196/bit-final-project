@@ -5,7 +5,7 @@ import CreateReportsPage from './pages/CreateReportsPage/CreateReportsPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ReportsPage from './pages/ReportsPage/ReportsPage';
 import SingleCandidatesPage from './pages/SingleCandidatesPage/SingleCandidatesPage';
-import { Switch, Route } from "react-router-dom"
+import { Switch, Route, useHistory } from "react-router-dom"
 import { DataProvider } from "./context"
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
   const [users, setUsers] = useState([])
   const [token, setToken] = useState("")
   const [updateReports, setUpdateReports] = useState(false)
+  const history = useHistory();
   useEffect(() => {
     fetch("http://localhost:3333/664/api/candidates")
       .then(res => res.json())
@@ -36,14 +37,17 @@ function App() {
       .then(res => setReports(res))
   }, [updateReports])
 
+  useEffect(() => {
+
+      history.push("/candidates");
+  
+  },[]);
+
   return (
 
     <DataProvider value={{ candidates, reports, companies, users, token, setToken, updateReports, setUpdateReports }}>
       <div className="app">
         <Switch>
-          <Route exact path="/">
-            <CandidatesPage />
-          </Route>
           <Route exact path="/candidates">
             <CandidatesPage />
           </Route>

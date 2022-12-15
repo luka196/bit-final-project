@@ -9,14 +9,17 @@ const Header = () => {
 
   const logOut = () => {
     // setToken("");
-    history.push("/");
+    history.push("/candidates");
   };
 
   return (
     <div className="header">
-      <h1>Bit project</h1>
+      <h1 className="interviewsReports">Interviews Reports</h1>
+      <h1 className="reportsAdministration">Reports Administration</h1>
+      <h1 className="logInTitle">Log In</h1>
+
       <div>
-        <Link id="btn-candidates" className="headerNavItem" to="/">
+        <Link id="btn-candidates" className="headerNavItem" to="/candidates">
           Candidates
         </Link>
 

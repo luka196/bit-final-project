@@ -38,6 +38,7 @@ const LoginPage = () => {
         }
       })
       .then((res) => {
+        console.log(res);
         if (res.accessToken) {
           localStorage.setItem("token", res.accessToken);
           setToken(res.accessToken);

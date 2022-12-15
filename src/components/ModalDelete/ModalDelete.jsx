@@ -22,7 +22,7 @@ export const ModalDelete = ({ id }) => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}1`,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(deleteReport),
     })
