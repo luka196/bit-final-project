@@ -5,6 +5,25 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
+  .search .icon svg {
+    width: 42px;
+    height: 30px;
+  }
+
+  .card2 {
+    width: 25%;
+
+    &:hover{
+      background-color: $color3;
+      cursor: pointer;
+    }
+
+    .img {
+      width: 80%;
+      padding-bottom: 5px;
+    }
+  }
+
   .search{
     position: relative;
     top: 0;
@@ -15,14 +34,18 @@
   }
 
   #btn-crrep {
-    background-color: #3f6179;
+    background-color: $color3;
+    border: 3px solid $color2;
+    height: 32px;
   }
 
   > div:nth-child(2) {
-    width: 25%;
-    border-right: 1px solid black;
+    background-color: rgba(42, 43, 56, 0.5);
+    margin-left: 10px;
+    width: 23%;
     padding: 0 5px;
     color: aliceblue;
+    min-height: 250px;
 
     > div {
       cursor: default;
@@ -60,7 +83,6 @@
 
     .last-report {
       display: inline-block;
-      border-top: 1px solid black;
       margin: 30px 0;
       width: 100%;
     }
@@ -76,7 +98,7 @@
 .fillReport {
   width: 75%;
 }
-button {
+.btn-next-prev {
   position: relative;
   font-size: 14px;
   letter-spacing: 3px;
@@ -90,7 +112,7 @@ button {
   border-radius: 5px
  }
  
- button::before {
+ .btn-next-prev::before {
   content: '';
   display: block;
   position: absolute;
@@ -104,11 +126,11 @@ button {
   transition: 0.2s;
  }
  
- button .label {
+ .btn-next-prev .label {
   position: relative;
  }
  
- button .icon {
+ .btn-next-prev .icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,11 +143,11 @@ button {
   transition: 0.4s;
  }
  
- button:hover::before {
+ .btn-next-prev:hover::before {
   height: 100%;
  }
  
- button:hover .icon {
+ .btn-next-prev:hover .icon {
   top: 0;
   opacity: 1;
  }

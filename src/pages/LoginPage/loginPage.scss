@@ -15,7 +15,9 @@
   }
 
   #btn-login {
-    background-color: #3f6179;
+    background-color: $color3;
+    border: 3px solid $color2;
+    height: 32px;
   }
   #btn-logout {
     display: none;
@@ -97,7 +99,7 @@
   transition: color .3s ease-out;
  }
  
- /*Hover & focus*/
+
  .field input:focus::placeholder {
   opacity: 0;
   transition: opacity .3s;

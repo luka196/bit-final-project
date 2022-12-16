@@ -129,7 +129,7 @@ const FillReport = ({
         </button>
         <div>
           
-          <button onClick={() => {
+          <button className="btn-next-prev" onClick={() => {
               submitReport();
             }}>
           <span class="label">Submit</span>

@@ -49,6 +49,8 @@
 
   .btnWizard {
     cursor: pointer;
+    background-color: $color1;
+
 
     &:hover {
       background-color: $btn-color;

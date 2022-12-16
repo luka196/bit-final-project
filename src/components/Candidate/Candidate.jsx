@@ -25,12 +25,14 @@ const Candidate = ({ data, setCandidate, isSelected, setMessage }) => {
         setMessage("");
       }}>
 <div class="img">
-<img className="cand-img" src={data?.avatar} alt="Image" />
+<img className="card-img" src={data?.avatar} alt="Image" />
 </div>
-<span class="heading">{data?.name}</span>
-<p className="email">
-{data?.email}
-</p>
+<div className="heading-email">
+  <span class="heading">{data?.name}</span>
+  <p className="email">
+  {data?.email}
+  </p>
+</div>
 </div>
 
   );
