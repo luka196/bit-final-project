@@ -11,20 +11,58 @@
   }
 
   .card2 {
-    width: 25%;
-
-    &:hover{
+    &:hover {
       background-color: $color3;
       cursor: pointer;
     }
 
     .img {
-      width: 80%;
+      width: 60%;
       padding-bottom: 5px;
+    }
+    @media screen and (max-width: 768px) {
+      //   .card2 {
+      //     display: flex;
+      //     flex-direction: row;
+      //     width: 100%;
+      //     height: 200px;
+
+      //     .img {
+      //       margin-left: 20px;
+      //       height: 160px;
+      //       width: 160px;
+      //     }
+      //   }
+      // .candidates {
+      //   width: 100%;
+      //   height: 250px;
+
+      // }
+    }
+    @media screen and (max-width: 425px) {
+      .createReportsPage,
+      .candidatesPage {
+        .candidates {
+          height: 170px;
+
+          .card2 {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 150px;
+
+            .img {
+              margin-left: 20px;
+              height: 110px;
+              width: 110px;
+            }
+          }
+        }
+      }
     }
   }
 
-  .search{
+  .search {
     position: relative;
     top: 0;
     padding: 5px;
@@ -35,8 +73,6 @@
 
   #btn-crrep {
     background-color: $color3;
-    border: 3px solid $color2;
-    height: 32px;
   }
 
   > div:nth-child(2) {
@@ -45,7 +81,6 @@
     width: 23%;
     padding: 0 5px;
     color: aliceblue;
-    min-height: 250px;
 
     > div {
       cursor: default;
@@ -109,11 +144,11 @@
   color: #fff;
   text-transform: uppercase;
   overflow: hidden;
-  border-radius: 5px
- }
- 
- .btn-next-prev::before {
-  content: '';
+  border-radius: 5px;
+}
+
+.btn-next-prev::before {
+  content: "";
   display: block;
   position: absolute;
   z-index: 0;
@@ -124,13 +159,13 @@
   background: $color3;
   background: linear-gradient(90deg, $color1 20%, $color3 100%);
   transition: 0.2s;
- }
- 
- .btn-next-prev .label {
+}
+
+.btn-next-prev .label {
   position: relative;
- }
- 
- .btn-next-prev .icon {
+}
+
+.btn-next-prev .icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,23 +176,21 @@
   right: 0;
   opacity: 0;
   transition: 0.4s;
- }
- 
- .btn-next-prev:hover::before {
+}
+
+.btn-next-prev:hover::before {
   height: 100%;
- }
- 
- .btn-next-prev:hover .icon {
+}
+
+.btn-next-prev:hover .icon {
   top: 0;
   opacity: 1;
- }
-
-
+}
 
 @media screen and (max-width: 768px) {
   .createReportsPage {
     > div:nth-child(2) {
-      width: 26%;
+      width: 23%;
 
       div {
         box-shadow: none;
@@ -209,5 +242,59 @@
     .fillReport {
       width: 100%;
     }
+  }
+}
+
+.twist {
+  transform: rotate(180deg);
+  .twist2 {
+    display: block;
+    transform: rotate(180deg);
+  }
+}
+@media screen and (max-width: 768px) {
+
+  .createReportsPage {
+    .candidates {
+      width: 100%;
+      height: 250px;
+
+      .card2 {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 200px;
+
+        .img {
+          margin-left: 20px;
+          height: 160px;
+          width: 160px;
+        }
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .createReportsPage {
+    .candidates {
+      height: 170px;
+
+      .card2 {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 150px;
+
+        .img {
+          margin-left: 20px!important;
+          height: 110px;
+          width: 110px;
+        }
+      }
+
+    }
+
   }
 }

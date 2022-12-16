@@ -20,14 +20,13 @@
 
   #btn-candidates {
     background-color: $color3;
-    border: 3px solid $color2;
-    height: 32px;
+
     
   }
 
   a {
-    width: 23%;
-    min-width: 230px;
+    // width: 23%;
+    // min-width: 230px;
 
     .card2 {
       display: flex;
@@ -67,7 +66,7 @@
       min-width: 200px;
 
       .card2{
-        width: 80%;
+        // width: 80%;
       }
     }
   }
