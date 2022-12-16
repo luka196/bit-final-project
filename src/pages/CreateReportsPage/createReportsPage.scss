@@ -35,8 +35,6 @@
 
   #btn-crrep {
     background-color: $color3;
-    border: 3px solid $color2;
-    height: 32px;
   }
 
   > div:nth-child(2) {
@@ -209,5 +207,13 @@
     .fillReport {
       width: 100%;
     }
+  }
+}
+
+.twist{
+  transform: rotate(180deg);
+  .twist2{
+    display: block;
+    transform: rotate(180deg);
   }
 }

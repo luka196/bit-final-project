@@ -47,9 +47,9 @@ const SelectCompany = ({
       )}
 
       <div>
-        <button className="btn-next-prev" onClick={() => setPage(1)}>
-          <span class="label">Back</span>
-          <span class="icon">
+        <button className="btn-next-prev twist" onClick={() => setPage(1)}>
+          <span className="label twist2">Back</span>
+          <span className="icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -66,8 +66,8 @@ const SelectCompany = ({
         </button>
         <div className="btn-msg">
           <button onClick={nextClick} className="btn-next-prev">
-            <span class="label">Next</span>
-            <span class="icon">
+            <span className="label">Next</span>
+            <span className="icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
