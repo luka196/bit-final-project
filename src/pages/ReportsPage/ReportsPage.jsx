@@ -3,7 +3,7 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import ReportAdmin from "../../components/ReportAdmin/ReportAdmin";
 import Search from "../../components/Search/Search";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { dataContext } from "../../context";
 import "./reportsPage.scss";
 
@@ -25,19 +25,11 @@ const ReportsPage = () => {
       <Search setSearchString={setSearchString} searchString={searchString} />
       {filterCandidates?.reverse()?.map((e) => (
         <ReportAdmin
-          // setModalData={setModalData}
           data={e}
           key={e.id}
         />
       ))}
 
-      {/* <Modal isOpenModal={modalData} closeModal={() => setModalData(null)}>
-        <ModalDetails data={modalData} />
-      </Modal>
-      <Modal
-        isOpenModal={isDeleteModalOpen}
-        closeModal={() => setIsDeleteModalOpen(false)}
-      ></Modal> */}
       <Footer />
     </div>
   );

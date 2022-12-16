@@ -17,6 +17,7 @@
   img {
     width: auto;
     height: 30vh;
+  
   }
 
   > h2 {
@@ -35,6 +36,7 @@
       width: 34%;
       border: 1px solid $color2;
     }
+
   }
 
   @media screen and (max-width: 768px) {
