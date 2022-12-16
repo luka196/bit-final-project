@@ -8,6 +8,10 @@
 }
 body{
   overflow-x: hidden;
+  background-image: url(https://wallpaperaccess.com/full/877589.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 a {
@@ -15,9 +19,5 @@ a {
 }
 
 .app {
-  min-height: 100vh;
-  background-image: url(https://wallpaperaccess.com/full/877589.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  min-height: 100vh;  
 }

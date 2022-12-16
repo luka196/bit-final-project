@@ -20,7 +20,7 @@ const CandidatesPage = () => {
         <Search setSearchString={setSearchString} searchString={searchString} />
       </div>
       {filterCandidates?.map((e) => (
-        <Link key={e.id} to={`/single-candidates/${e.id}`}>
+        <Link className="candidates" key={e.id} to={`/single-candidates/${e.id}`}>
           <Candidate setMessage={() => {}} setCandidate={() => {}} data={e} />
         </Link>
       ))}
