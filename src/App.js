@@ -40,7 +40,9 @@ function App() {
   useEffect(() => {
 
       history.push("/candidates");
-  
+      if (localStorage.getItem("token")) {
+        setToken(localStorage.getItem("token"))
+      }
   },[]);
 
   return (
@@ -51,17 +53,17 @@ function App() {
           <Route exact path="/candidates">
             <CandidatesPage />
           </Route>
-          <Route path="/single-candidates-page/:id">
+          <Route path="/single-candidates/:id">
             <SingleCandidatesPage />
           </Route>
-          <Route path="/login-page">
+          <Route path="/login">
             <LoginPage />
           </Route>
           {token && <>
-            <Route path="/reports-page">
+            <Route path="/reports">
               <ReportsPage />
             </Route>
-            <Route path="/create-reports-page">
+            <Route path="/create-reports">
               <CreateReportsPage />
             </Route>
           </>}

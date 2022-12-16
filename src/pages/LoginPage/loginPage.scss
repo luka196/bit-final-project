@@ -9,7 +9,9 @@
   min-height: 100vh;
 
   h1 {
+  
     letter-spacing: 3px;
+    
   }
 
   #btn-login {
@@ -24,7 +26,10 @@
 
   } 
  
- 
+ .loginError {
+  color: red;
+  height: 10px;
+ }
 .card1 {
   display: flex;
   justify-content: space-around;

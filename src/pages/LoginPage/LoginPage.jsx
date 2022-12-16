@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./loginPage.scss";
-import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { useHistory } from "react-router-dom";
 import { dataContext } from "../../context";
@@ -12,7 +11,6 @@ const LoginPage = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const { setToken } = useContext(dataContext);
   const { token } = useContext(dataContext);
-
   const handleKeypress = (e) => {
     if (e.keyCode === 13) {
       fetchToken();
@@ -49,7 +47,7 @@ const LoginPage = () => {
 
   useEffect(() => {
     if (token) {
-      history.push("/reports-page");
+      history.push("/reports");
     }
   }, [token]);
 
@@ -72,6 +70,7 @@ const LoginPage = () => {
           <button className="btn1" type="submit" onClick={() => {
             fetchToken(); console.log(mail, pass, token)
           }}>Login</button>
+          <p className="loginError">{errorMessage}</p>
         </div>
       </div>
     </div>
