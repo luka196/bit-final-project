@@ -58,7 +58,6 @@ const SingleCandidatesPage = () => {
       {/* <Modal isOpenModal={modalData} closeModal={() => setModalData(null)}>
         <ModalDetails data={modalData} />
       </Modal> */}
-      <ModalDetails/>
       <Footer />
     </div>
   );
