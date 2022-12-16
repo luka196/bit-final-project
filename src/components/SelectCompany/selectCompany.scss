@@ -4,8 +4,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  color: $color2;
   > * {
     width: 95%;
+  
   }
   div {
     .btn-msg {

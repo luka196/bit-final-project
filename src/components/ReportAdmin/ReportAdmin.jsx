@@ -22,7 +22,6 @@ const ReportAdmin = ({ data, setModalData }) => {
         <span>Status</span>
       </div>
       <div>
-       
         <ModalDetails data={data}/>
         <ModalDelete id={data?.id} />
       
