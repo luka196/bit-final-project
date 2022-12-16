@@ -98,7 +98,7 @@
 .fillReport {
   width: 75%;
 }
-button {
+.btn-next-prev {
   position: relative;
   font-size: 14px;
   letter-spacing: 3px;
@@ -112,7 +112,7 @@ button {
   border-radius: 5px
  }
  
- button::before {
+ .btn-next-prev::before {
   content: '';
   display: block;
   position: absolute;
@@ -126,11 +126,11 @@ button {
   transition: 0.2s;
  }
  
- button .label {
+ .btn-next-prev .label {
   position: relative;
  }
  
- button .icon {
+ .btn-next-prev .icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -143,11 +143,11 @@ button {
   transition: 0.4s;
  }
  
- button:hover::before {
+ .btn-next-prev:hover::before {
   height: 100%;
  }
  
- button:hover .icon {
+ .btn-next-prev:hover .icon {
   top: 0;
   opacity: 1;
  }
