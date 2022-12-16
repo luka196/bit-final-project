@@ -16,13 +16,7 @@ const Reports = ({ data, setModalData }) => {
                 setModalData(data);
               }}
             >
-      <ModalDetails data={data}/>
-
-              {/* <img
-                className="viewBtn"
-                src="https://cdn.pixabay.com/photo/2016/12/18/11/04/eye-1915455_1280.png"
-                alt=""
-              /> */}
+              <ModalDetails data={data} />
             </button>
           </div>
         </div>

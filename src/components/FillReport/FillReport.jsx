@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { dataContext } from "../../context";
 import "./fillReport.scss";
 import { useHistory } from "react-router-dom";
+
 const FillReport = ({
   setPage,
   candidate,
@@ -10,10 +11,13 @@ const FillReport = ({
 }) => {
   const history = useHistory();
   const { token, reports } = useContext(dataContext);
-  // const token = localStorage.getItem("token");
   const [submitFail, setSubmitFail] = useState("");
   const { setUpdateReports } = useContext(dataContext);
   const { updateReports } = useContext(dataContext);
+  const [interviewDate, setInterviewDate] = useState("");
+  const [status, setStatus] = useState("");
+  const [note, setNote] = useState("");
+
   const array = filterReportsByCandidateAndCompany(reports, candidate, company);
   const phase = (() => {
     let phase;
@@ -28,28 +32,24 @@ const FillReport = ({
     }
     return phase;
   })(array);
-  console.log(phase,array)
-  // const phases = ["cv", "hr", "tech", "final"];
-  // const phase = phases[array.length];
+
+
 
   const newReport = {
     candidateId: candidate?.id,
     candidateName: candidate?.name,
     companyId: company?.id,
     companyName: company?.name,
-    interviewDate: "",
+    interviewDate: `${interviewDate}`,
     phase,
-    status: "",
-    note: "",
+    status: `${status}`,
+    note: `${note}`,
   };
 
-  console.log(3);
-  console.log(newReport.interviewDate);
-  console.log(newReport.status);
   function submitReport() {
+
     if (
       newReport.interviewDate !== "" &&
-      // newReport.phase !== "" &&
       newReport.status !== ""
     ) {
       fetch("http://localhost:3333/664/api/reports", {
@@ -64,13 +64,14 @@ const FillReport = ({
         .then((result) => {
           console.log("Success:", result);
           setUpdateReports(!updateReports);
-          history.push("/reports-page", { createdReport: true });
+          history.push("/reports", { createdReport: true });
         })
         .catch((error) => {
           console.error("Error:", error);
         });
     } else {
       setSubmitFail("Please select all fields");
+
     }
   }
  
@@ -85,7 +86,7 @@ const FillReport = ({
             onChange={(e) => {
               let date = new Date(e.target.value);
               date = date.toString();
-              newReport.interviewDate = date;
+              setInterviewDate(date)
             }}
             max={new Date().toISOString().split("T")[0]}
           />
@@ -102,7 +103,7 @@ const FillReport = ({
             name="status"
             id="status"
             defaultValue="-select-"
-            onChange={(e) => (newReport.status = e.target.value)}
+            onChange={(e) => (setStatus(e.target.value))}
           >
             <option value="-select-" disabled>
               -select-
@@ -117,11 +118,11 @@ const FillReport = ({
         <textarea className="input"
         placeholder="Write here..."
           type="textarea"
-          onChange={(e) => (newReport.note = e.target.value)}
+          onChange={(e) => (setNote(e.target.value))}
         />
       </div>
       <div className="btn-msg">
-      <button onClick={() => setPage(2)}>
+      <button className="btn-next-prev" onClick={() => setPage(2)}>
           <span class="label">Back</span>
           <span class="icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>

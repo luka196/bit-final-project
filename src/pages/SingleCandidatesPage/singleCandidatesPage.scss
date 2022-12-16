@@ -19,9 +19,7 @@
     height: 30vh;
   
   }
-  .viewBtn {
-    // display: none;
-  }
+
   > h2 {
     width: 95%;
     margin: 20px;
@@ -38,9 +36,7 @@
       width: 34%;
       border: 1px solid $color2;
     }
-    // >.eye>button>.tooltip1{
-    //   width: 30px!important;
-    // }
+
   }
 
   @media screen and (max-width: 768px) {

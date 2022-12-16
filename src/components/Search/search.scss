@@ -1,6 +1,5 @@
 @import "../../constans/variables.scss";
 .searchWrapper{
-// position: fixed;
 width: 100%;
 display: flex;
 justify-content: center;
@@ -37,23 +36,7 @@ justify-content: center;
   pointer-events: all;
   cursor: pointer;
 }
-// width: 100%;
-  // padding: 0 40px;
-  // position: fixed;
-  // top: 70px;
-  // // right: 40px;
 
-
-  // .picture {
-  //   width: 25px;
-  //   height: 25px;
-  // }
-  // input {
-    //   padding: 7px;
-    //   margin-left: 5px;
-    //   border-radius: 10px;
-    //   width: 250px;
-  // }
   
   .search .icon {
   position: absolute;

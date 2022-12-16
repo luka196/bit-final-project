@@ -6,7 +6,6 @@ import Reports from "../../components/Reports/Reports";
 import "./singleCandidatesPage.scss";
 import { dataContext } from "../../context";
 import { useRouteMatch } from "react-router-dom";
-import { ModalDetails } from "../../components/ModalDetails/ModalDetails";
 
 const SingleCandidatesPage = () => {
   const { candidates } = useContext(dataContext);
@@ -45,19 +44,14 @@ const SingleCandidatesPage = () => {
         <div>🠟 Status</div>
       </div>
 
-      {/* {singleCandidateReports?.map((e) => <Reports openModal={x => handleModalData(x)} data={e} />)} */}
       {singleCandidateReports?.map((e) => (
         <Reports
           key={e.id}
-          // openDetailsModal={setIsDetailsModalOpen}
           setModalData={setModalData}
           data={e}
         />
       ))}
 
-      {/* <Modal isOpenModal={modalData} closeModal={() => setModalData(null)}>
-        <ModalDetails data={modalData} />
-      </Modal> */}
       <Footer />
     </div>
   );

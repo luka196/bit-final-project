@@ -1,14 +1,12 @@
 @import "../../constans/variables.scss";
 
 .card2 {
-  // width: 330px;
   height: 400px;
   background-color: $color1;
   border-radius: 5px;
   text-align: center;
   color: #f0f0f0;
   font-family: inherit;
-  // z-index: 1;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
